@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VETOCARE - Quiz</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f8f5;
+  color:#1f2937;
+}
+
+header{
+  background:#176b45;
+  color:white;
+  padding:18px 12px;
+  text-align:center;
+}
+
+header h1{
+  margin:0 0 12px;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  background:rgba(255,255,255,0.15);
+  padding:8px 11px;
+  border-radius:20px;
+  font-size:14px;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px 12px 40px;
+}
+
+.intro{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.intro h2{
+  color:#176b45;
+}
+
+.categories{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  margin-bottom:20px;
+}
+
+.categories button{
+  border:none;
+  padding:10px 14px;
+  border-radius:20px;
+  background:#dcefe5;
+  color:#176b45;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.categories button.active{
+  background:#176b45;
+  color:white;
+}
+
+.quiz-box{
+  background:white;
+  padding:20px;
+  border-radius:18px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.progress-container{
+  width:100%;
+  height:12px;
+  background:#e5e7eb;
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:15px;
+}
+
+.progress{
+  height:100%;
+  width:0%;
+  background:#176b45;
+  transition:width .3s;
+}
+
+#compteur{
+  text-align:center;
+  font-weight:bold;
+  color:#176b45;
+  margin-bottom:15px;
+}
+
+#question{
+  font-size:21px;
+  font-weight:bold;
+  margin-bottom:18px;
+}
+
+.reponses{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.reponses button{
+  width:100%;
+  padding:14px;
+  border:2px solid #d1d5db;
+  background:#fff;
+  border-radius:12px;
+  text-align:left;
+  font-size:16px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.reponses button:hover{
+  border-color:#176b45;
+}
+
+.reponses button.bonne{
+  background:#16803c !important;
+  color:white !important;
+  border-color:#16803c !important;
+}
+
+.reponses button.mauvaise{
+  background:#d62828 !important;
+  color:white !important;
+  border-color:#d62828 !important;
+}
+
+#explication{
+  display:none;
+  margin-top:18px;
+  padding:15px;
+  background:#eef8f1;
+  border-left:5px solid #176b45;
+  border-radius:10px;
+}
+
+#suivant{
+  display:none;
+  width:100%;
+  margin-top:18px;
+  padding:13px;
+  border:none;
+  border-radius:12px;
+  background:#176b45;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+#resultat{
+  display:none;
+  text-align:center;
+}
+
+.score{
+  font-size:30px;
+  color:#176b45;
+  font-weight:bold;
+}
+
+#recommencer{
+  padding:13px 20px;
+  border:none;
+  border-radius:12px;
+  background:#176b45;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:#176b45;
+  color:white;
+  margin-top:30px;
+}
+
+@media(max-width:600px){
+  #question{
+    font-size:18px;
+  }
+
+  .quiz-box{
+    padding:15px;
+  }
+
+  .categories button{
+    font-size:13px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🐾 VETOCARE</h1>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="animaux.html">Animaux</a>
+    <a href="maladies.html">Maladies</a>
+    <a href="conseils.html">Conseils</a>
+    <a href="quiz.html">Quiz</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="intro">
+    <h2>🧠 Quiz vétérinaire</h2>
+    <p>Teste tes connaissances en santé animale avec 100 questions.</p>
+  </div>
+
+  <div class="categories">
+    <button class="active" onclick="choisirCategorie('tous',this)">Toutes</button>
+    <button onclick="choisirCategorie('chiens',this)">🐕 Chiens</button>
+    <button onclick="choisirCategorie('chats',this)">🐈 Chats</button>
+    <button onclick="choisirCategorie('bovins',this)">🐄 Bovins</button>
+    <button onclick="choisirCategorie('volailles',this)">🐔 Volailles</button>
+    <button onclick="choisirCategorie('ruminants',this)">🐐 Ruminants</button>
+    <button onclick="choisirCategorie('porcs',this)">🐖 Porcs</button>
+    <button onclick="choisirCategorie('equides',this)">🐎 Équidés</button>
+    <button onclick="choisirCategorie('lapins',this)">🐇 Lapins</button>
+    <button onclick="choisirCategorie('poissons',this)">🐟 Poissons</button>
+  </div>
+
+  <div class="quiz-box" id="quiz">
+
+    <div class="progress-container">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <div id="compteur"></div>
+
+    <div id="question"></div>
+
+    <div class="reponses" id="reponses"></div>
+
+    <div id="explication"></div>
+
+    <button id="suivant" onclick="questionSuivante()">
+      Question suivante ➜
+    </button>
+
+  </div>
+
+  <div class="quiz-box" id="resultat">
+
+    <h2>🎉 Quiz terminé !</h2>
+
+    <p>Ton score :</p>
+
+    <div class="score" id="scoreFinal"></div>
+
+    <p id="messageFinal"></p>
+
+    <button id="recommencer" onclick="recommencerQuiz()">
+      🔄 Recommencer
+    </button>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 VETOCARE — Pour la santé animale 🐾
+</footer>
+
+<script>
+
+const questions = [
+
+/* ==================== CHIENS ==================== */
+
+{
+categorie:"chiens",
+question:"Quel signe est fréquemment associé à la parvovirose canine ?",
+reponses:["Vomissements et diarrhée","Boiterie uniquement","Perte de poils uniquement","Toux uniquement"],
+bonne:0,
+explication:"La parvovirose canine peut provoquer des troubles digestifs importants."
+},
+
+{
+categorie:"chiens",
+question:"Quel organe est principalement concerné par une otite ?",
+reponses:["L'oreille","Le foie","Le rein","Le cœur"],
+bonne:0,
+explication:"Une otite correspond à une inflammation ou infection de l'oreille."
+},
+
+{
+categorie:"chiens",
+question:"Pourquoi la vaccination du chien est-elle importante ?",
+reponses:["Prévenir certaines maladies infectieuses","Augmenter sa taille","Changer la couleur du pelage","Remplacer l'alimentation"],
+bonne:0,
+explication:"La vaccination contribue à prévenir certaines maladies infectieuses."
+},
+
+{
+categorie:"chiens",
+question:"La rage est principalement une maladie de quel type ?",
+reponses:["Virale","Bactérienne","Fongique","Nutritionnelle"],
+bonne:0,
+explication:"La rage est une maladie virale qui peut toucher plusieurs mammifères."
+},
+
+{
+categorie:"chiens",
+question:"Quel parasite externe peut provoquer des démangeaisons chez le chien ?",
+reponses:["La puce","Le ver solitaire","La douve","La coccidie"],
+bonne:0,
+explication:"Les puces sont des parasites externes pouvant provoquer des démangeaisons."
+},
+
+{
+categorie:"chiens",
+question:"La dirofilariose canine est liée à quel type de parasite ?",
+reponses:["Un ver parasite","Une bactérie","Un champignon","Un virus"],
+bonne:0,
+explication:"La dirofilariose est une parasitose due à des vers filaires."
+},
+
+{
+categorie:"chiens",
+question:"Quel examen permet notamment d'évaluer les cellules du sang ?",
+reponses:["Numération-formule sanguine","Radiographie uniquement","Échographie uniquement","Endoscopie uniquement"],
+bonne:0,
+explication:"La numération-formule sanguine évalue différentes cellules sanguines."
+},
+
+{
+categorie:"chiens",
+question:"Quel sens est particulièrement développé chez le chien ?",
+reponses:["L'odorat","Le goût uniquement","La vision nocturne parfaite","Aucun sens"],
+bonne:0,
+explication:"Le chien possède un odorat très développé."
+},
+
+{
+categorie:"chiens",
+question:"La leptospirose canine est causée par :",
+reponses:["Une bactérie","Un virus","Un champignon","Un parasite externe"],
+bonne:0,
+explication:"La leptospirose est une maladie bactérienne."
+},
+
+{
+categorie:"chiens",
+question:"Quel appareil est principalement concerné par la cystite ?",
+reponses:["Appareil urinaire","Appareil respiratoire","Appareil locomoteur","Appareil digestif"],
+bonne:0,
+explication:"La cystite correspond à une inflammation de la vessie."
+},
+
+/* ==================== CHATS ==================== */
+
+{
+categorie:"chats",
+question:"Quelle maladie virale féline est aussi appelée panleucopénie ?",
+reponses:["Panleucopénie féline","Mammite","Fourbure","Gourme"],
+bonne:0,
+explication:"La panleucopénie féline est une maladie virale du chat."
+},
+
+{
+categorie:"chats",
+question:"Quel problème touche directement les dents et les gencives du chat ?",
+reponses:["Maladie parodontale","Cétose","Fourbure","Mammite"],
+bonne:0,
+explication:"La maladie parodontale concerne les structures entourant les dents."
+},
+
+{
+categorie:"chats",
+question:"Quel parasite externe est très fréquent chez les chats ?",
+reponses:["La puce","La douve","Le ténia uniquement","La coccidie"],
+bonne:0,
+explication:"Les puces sont des parasites externes fréquents chez les chats."
+},
+
+{
+categorie:"chats",
+question:"Le coryza félin concerne principalement quel appareil ?",
+reponses:["Respiratoire","Locomoteur","Digestif uniquement","Reproducteur"],
+bonne:0,
+explication:"Le coryza félin regroupe des affections touchant principalement les voies respiratoires supérieures."
+},
+
+{
+categorie:"chats",
+question:"Quelle maladie peut provoquer une augmentation anormale de la fonction thyroïdienne chez le chat ?",
+reponses:["Hyperthyroïdie","Hypocalcémie","Mammite","Piétin"],
+bonne:0,
+explication:"L'hyperthyroïdie correspond à une activité excessive de la glande thyroïde."
+},
+
+{
+categorie:"chats",
+question:"Quel organe est principalement concerné par une hépatite ?",
+reponses:["Le foie","Le cœur","Le poumon","Le cerveau"],
+bonne:0,
+explication:"L'hépatite correspond à une inflammation du foie."
+},
+
+{
+categorie:"chats",
+question:"La toxoplasmose est due à :",
+reponses:["Un parasite","Une bactérie","Un virus","Un champignon"],
+bonne:0,
+explication:"La toxoplasmose est une maladie parasitaire."
+},
+
+{
+categorie:"chats",
+question:"Quel trouble urinaire peut devenir une urgence chez le chat mâle ?",
+reponses:["Obstruction urétrale","Otite","Conjonctivite","Dermatite"],
+bonne:0,
+explication:"Une obstruction urétrale peut empêcher l'évacuation normale de l'urine et nécessite une prise en charge vétérinaire."
+},
+
+{
+categorie:"chats",
+question:"Quelle maladie féline peut provoquer une inflammation douloureuse de la bouche ?",
+reponses:["Gingivostomatite","Fourbure","Cétose","Mammite"],
+bonne:0,
+explication:"La gingivostomatite féline provoque une inflammation de la cavité buccale."
+},
+
+{
+categorie:"chats",
+question:"Quel examen permet d'observer les structures internes du corps grâce aux ultrasons ?",
+reponses:["Échographie","Radiographie uniquement","Stéthoscope","Thermomètre"],
+bonne:0,
+explication:"L'échographie utilise les ultrasons pour produire des images des structures internes."
+},
+
+/* ==================== BOVINS ==================== */
+
+{
+categorie:"bovins",
+question:"Quel organe est principalement concerné par une mammite ?",
+reponses:["La mamelle","Le foie","Le cœur","Le poumon"],
+bonne:0,
+explication:"La mammite est une inflammation de la glande mammaire."
+},
+
+{
+categorie:"bovins",
+question:"La cétose bovine est principalement un :",
+reponses:["Trouble métabolique","Traumatisme osseux","Maladie de la peau","Trouble de l'oreille"],
+bonne:0,
+explication:"La cétose est un trouble métabolique associé notamment au bilan énergétique."
+},
+
+{
+categorie:"bovins",
+question:"Quel signe peut être observé lors d'un problème locomoteur chez une vache ?",
+reponses:["Boiterie","Toux uniquement","Éternuement uniquement","Changement de couleur des yeux"],
+bonne:0,
+explication:"La boiterie est un signe fréquent des troubles locomoteurs."
+},
+
+{
+categorie:"bovins",
+question:"Combien de compartiments possède l'estomac des bovins ?",
+reponses:["Quatre","Deux","Six","Un"],
+bonne:0,
+explication:"L'estomac des ruminants possède quatre compartiments : rumen, réticulum, omasum et abomasum."
+},
+
+{
+categorie:"bovins",
+question:"Quel est le principal compartiment de fermentation chez les bovins ?",
+reponses:["Le rumen","Le cœur","Le foie","Le rein"],
+bonne:0,
+explication:"Le rumen est le principal compartiment de fermentation microbienne."
+},
+
+{
+categorie:"bovins",
+question:"La fièvre aphteuse est causée par :",
+reponses:["Un virus","Une bactérie","Un champignon","Un parasite"],
+bonne:0,
+explication:"La fièvre aphteuse est une maladie virale très contagieuse."
+},
+
+{
+categorie:"bovins",
+question:"La brucellose bovine peut notamment provoquer :",
+reponses:["Des troubles de la reproduction","Une coloration bleue du pelage","Une fracture systématique","Une cécité obligatoire"],
+bonne:0,
+explication:"La brucellose peut provoquer des avortements et d'autres troubles de la reproduction."
+},
+
+{
+categorie:"bovins",
+question:"Quel trouble correspond à une diminution du calcium sanguin après le vêlage ?",
+reponses:["Hypocalcémie","Hyperthyroïdie","Acidose pulmonaire","Dermatite"],
+bonne:0,
+explication:"L'hypocalcémie correspond à une concentration insuffisante de calcium dans le sang."
+},
+
+{
+categorie:"bovins",
+question:"La rétention placentaire concerne principalement :",
+reponses:["La délivrance après le vêlage","La digestion","La respiration","La vision"],
+bonne:0,
+explication:"La rétention placentaire concerne l'évacuation du placenta après la mise bas."
+},
+
+{
+categorie:"bovins",
+question:"Quel signe peut être associé à une acidose ruminale ?",
+reponses:["Troubles digestifs","Fracture du membre","Otite","Conjonctivite uniquement"],
+bonne:0,
+explication:"L'acidose ruminale est un trouble digestif lié notamment à une fermentation excessive et à une baisse du pH ruminal."
+},
+
+/* ==================== VOLAILLES ==================== */
+
+{
+categorie:"volailles",
+question:"Quel agent provoque la maladie de Newcastle ?",
+reponses:["Un virus","Une bactérie","Un champignon","Un ver"],
+bonne:0,
+explication:"La maladie de Newcastle est une maladie virale des oiseaux."
+},
+
+{
+categorie:"volailles",
+question:"La maladie de Gumboro touche principalement :",
+reponses:["Le système immunitaire","Les sabots","La mamelle","Les nageoires"],
+bonne:0,
+explication:"La maladie de Gumboro affecte notamment la bourse de Fabricius et le système immunitaire."
+},
+
+{
+categorie:"volailles",
+question:"La coccidiose aviaire est causée par :",
+reponses:["Des protozoaires","Des virus uniquement","Des champignons uniquement","Des bactéries uniquement"],
+bonne:0,
+explication:"La coccidiose est provoquée par des protozoaires du genre Eimeria."
+},
+
+{
+categorie:"volailles",
+question:"Pourquoi l'eau propre est-elle importante pour les volailles ?",
+reponses:["Pour maintenir leur santé et leur hydratation","Pour changer leurs plumes","Pour augmenter automatiquement leur taille","Pour remplacer tous les vaccins"],
+bonne:0,
+explication:"Une eau propre contribue à l'hydratation et à la prévention de certains problèmes sanitaires."
+},
+
+{
+categorie:"volailles",
+question:"La bronchite infectieuse aviaire est principalement une maladie :",
+reponses:["Respiratoire","Osseuse","Oculaire uniquement","Digestive uniquement"],
+bonne:0,
+explication:"La bronchite infectieuse aviaire est une maladie virale principalement respiratoire."
+},
+
+{
+categorie:"volailles",
+question:"La maladie de Marek est causée par :",
+reponses:["Un virus","Un parasite externe","Une carence en calcium uniquement","Un champignon"],
+bonne:0,
+explication:"La maladie de Marek est une maladie virale des volailles."
+},
+
+{
+categorie:"volailles",
+question:"Quel organe respiratoire caractéristique possède la volaille ?",
+reponses:["Des sacs aériens","Des branchies","Un rumen","Des sabots"],
+bonne:0,
+explication:"Les oiseaux possèdent des sacs aériens participant à leur système respiratoire."
+},
+
+{
+categorie:"volailles",
+question:"La variole aviaire est causée par :",
+reponses:["Un virus","Une bactérie","Un ver","Un champignon"],
+bonne:0,
+explication:"La variole aviaire est une maladie virale."
+},
+
+{
+categorie:"volailles",
+question:"Quel comportement peut favoriser la propagation d'une maladie dans un élevage ?",
+reponses:["Une mauvaise hygiène","Une bonne ventilation","Un nettoyage régulier","Une bonne gestion de l'eau"],
+bonne:0,
+explication:"Une mauvaise hygiène peut favoriser la circulation de nombreux agents infectieux."
+},
+
+{
+categorie:"volailles",
+question:"La pullorose concerne principalement quelle espèce ?",
+reponses:["Les volailles","Les poissons","Les chevaux","Les bovins uniquement"],
+bonne:0,
+explication:"La pullorose est une maladie bactérienne touchant notamment les poulets."
+},
+
+/* ==================== RUMINANTS ==================== */
+
+{
+categorie:"ruminants",
+question:"La chèvre appartient à quel groupe ?",
+reponses:["Petits ruminants","Équidés","Volailles","Poissons"],
+bonne:0,
+explication:"La chèvre est un petit ruminant."
+},
+
+{
+categorie:"ruminants",
+question:"Le mouton est-il un ruminant ?",
+reponses:["Oui","Non","Seulement à la naissance","Seulement en hiver"],
+bonne:0,
+explication:"Le mouton est un ruminant."
+},
+
+{
+categorie:"ruminants",
+question:"Le piétin touche principalement :",
+reponses:["Les pieds","Les yeux","Le foie","Les poumons"],
+bonne:0,
+explication:"Le piétin est une affection infectieuse affectant les pieds des ovins et autres petits ruminants."
+},
+
+{
+categorie:"ruminants",
+question:"La peste des petits ruminants est causée par :",
+reponses:["Un virus","Un champignon","Un parasite externe","Une carence"],
+bonne:0,
+explication:"La peste des petits ruminants est une maladie virale contagieuse."
+},
+
+{
+categorie:"ruminants",
+question:"Quel animal est un petit ruminant ?",
+reponses:["La brebis","Le cheval","Le porc","Le poulet"],
+bonne:0,
+explication:"La brebis est la femelle adulte du mouton, qui est un petit ruminant."
+},
+
+{
+categorie:"ruminants",
+question:"La toxoplasmose peut toucher notamment :",
+reponses:["Les ovins","Les poissons uniquement","Les chevaux uniquement","Les volailles uniquement"],
+bonne:0,
+explication:"La toxoplasmose peut toucher les ovins et avoir des conséquences sur la reproduction."
+},
+
+{
+categorie:"ruminants",
+question:"Quel aliment constitue une source importante de fibres pour les ruminants ?",
+reponses:["Le fourrage","Le sel uniquement","L'eau uniquement","Les vitamines uniquement"],
+bonne:0,
+explication:"Les fourrages apportent notamment des fibres nécessaires au fonctionnement digestif des ruminants."
+},
+
+{
+categorie:"ruminants",
+question:"Quel compartiment de l'estomac vient après le rumen ?",
+reponses:["Le réticulum","Le côlon","Le cæcum","Le pancréas"],
+bonne:0,
+explication:"Chez les ruminants, le réticulum est situé après le rumen dans le trajet digestif."
+},
+
+{
+categorie:"ruminants",
+question:"La toxémie de gestation concerne particulièrement :",
+reponses:["Les brebis en fin de gestation","Les poissons adultes","Les chevaux uniquement","Les poulets"],
+bonne:0,
+explication:"La toxémie de gestation peut apparaître chez les brebis en fin de gestation, notamment lors de besoins énergétiques élevés."
+},
+
+{
+categorie:"ruminants",
+question:"La lymphadénite caséeuse est principalement associée à :",
+reponses:["Les petits ruminants","Les poissons","Les volailles","Les chevaux"],
+bonne:0,
+explication:"La lymphadénite caséeuse est une maladie bactérienne fréquente chez les petits ruminants."
+},
+
+/* ==================== PORCS ==================== */
+
+{
+categorie:"porcs",
+question:"La peste porcine africaine est causée par :",
+reponses:["Un virus","Un champignon","Un parasite intestinal","Une carence"],
+bonne:0,
+explication:"La peste porcine africaine est une maladie virale des suidés."
+},
+
+{
+categorie:"porcs",
+question:"La peste porcine classique est :",
+reponses:["Une maladie virale","Une maladie fongique","Une carence","Une maladie parasitaire externe"],
+bonne:0,
+explication:"La peste porcine classique est une maladie virale."
+},
+
+{
+categorie:"porcs",
+question:"L'érysipèle du porc est causé par :",
+reponses:["Une bactérie","Un virus","Un champignon","Un parasite externe"],
+bonne:0,
+explication:"L'érysipèle porcin est une maladie bactérienne."
+},
+
+{
+categorie:"porcs",
+question:"La pneumonie enzootique porcine concerne principalement :",
+reponses:["L'appareil respiratoire","Les sabots","Les yeux","La mamelle"],
+bonne:0,
+explication:"Cette maladie affecte principalement l'appareil respiratoire des porcs."
+},
+
+{
+categorie:"porcs",
+question:"Quel signe peut accompagner un trouble digestif chez le porc ?",
+reponses:["Diarrhée","Fracture systématique","Changement de race","Perte des cornes"],
+bonne:0,
+explication:"La diarrhée peut être observée lors de plusieurs troubles digestifs."
+},
+
+{
+categorie:"porcs",
+question:"La dysenterie porcine touche principalement :",
+reponses:["Le tube digestif","Les oreilles","Les sabots uniquement","Les yeux uniquement"],
+bonne:0,
+explication:"La dysenterie porcine est une affection digestive."
+},
+
+{
+categorie:"porcs",
+question:"Quel est le jeune porc appelé ?",
+reponses:["Porcelet","Veau","Agneau","Poulain"],
+bonne:0,
+explication:"Le jeune du porc est appelé porcelet."
+},
+
+{
+categorie:"porcs",
+question:"Pourquoi la biosécurité est-elle importante dans un élevage porcin ?",
+reponses:["Pour réduire les risques d'introduction et de propagation des maladies","Pour changer la couleur des porcs","Pour remplacer l'alimentation","Pour augmenter automatiquement la taille"],
+bonne:0,
+explication:"La biosécurité vise à réduire les risques sanitaires dans l'élevage."
+},
+
+{
+categorie:"porcs",
+question:"La gale sarcoptique du porc est causée par :",
+reponses:["Un acarien","Un virus","Une bactérie","Un champignon"],
+bonne:0,
+explication:"La gale sarcoptique est provoquée par un acarien parasite."
+},
+
+{
+categorie:"porcs",
+question:"Quel organe fait partie du système digestif du porc ?",
+reponses:["L'estomac","La trachée uniquement","Le cœur uniquement","La vessie uniquement"],
+bonne:0,
+explication:"L'estomac fait partie du système digestif."
+},
+
+/* ==================== EQUIDES ==================== */
+
+{
+categorie:"equides",
+question:"Chez le cheval, une colique concerne principalement :",
+reponses:["Le système digestif","Le système respiratoire","La peau uniquement","Les yeux"],
+bonne:0,
+explication:"Le terme colique désigne généralement une douleur abdominale, souvent liée au système digestif."
+},
+
+{
+categorie:"equides",
+question:"La fourbure touche principalement :",
+reponses:["Le pied","Le foie","Le cœur","Les oreilles"],
+bonne:0,
+explication:"La fourbure affecte les structures internes du pied du cheval."
+},
+
+{
+categorie:"equides",
+question:"La gourme du cheval est principalement une maladie :",
+reponses:["Bactérienne","Virale uniquement","Fongique uniquement","Nutritionnelle uniquement"],
+bonne:0,
+explication:"La gourme est une maladie bactérienne contagieuse du cheval."
+},
+
+{
+categorie:"equides",
+question:"La rhinopneumonie équine concerne principalement :",
+reponses:["Les chevaux","Les poissons","Les bovins uniquement","Les lapins uniquement"],
+bonne:0,
+explication:"La rhinopneumonie équine est une maladie importante chez les chevaux."
+},
+
+{
+categorie:"equides",
+question:"Le tétanos équin est causé par :",
+reponses:["Une bactérie","Un virus","Un parasite externe","Une carence"],
+bonne:0,
+explication:"Le tétanos est causé par une bactérie produisant une toxine."
+},
+
+{
+categorie:"equides",
+question:"Quel est le jeune du cheval ?",
+reponses:["Poulain","Veau","Agneau","Porcelet"],
+bonne:0,
+explication:"Le jeune cheval est appelé poulain."
+},
+
+{
+categorie:"equides",
+question:"Quel trouble peut provoquer une douleur abdominale chez le cheval ?",
+reponses:["Colique","Otite","Mammite","Piétin"],
+bonne:0,
+explication:"La colique est un terme utilisé pour désigner une douleur abdominale chez le cheval."
+},
+
+{
+categorie:"equides",
+question:"L'anémie infectieuse équine est causée par :",
+reponses:["Un virus","Un champignon","Un acarien","Une carence en calcium uniquement"],
+bonne:0,
+explication:"L'anémie infectieuse équine est une maladie virale."
+},
+
+{
+categorie:"equides",
+question:"La maladie de Lyme est transmise principalement par :",
+reponses:["Des tiques","Des poissons","Des poulets","Des moustiques uniquement"],
+bonne:0,
+explication:"La maladie de Lyme est principalement transmise par des tiques infectées."
+},
+
+{
+categorie:"equides",
+question:"Quel équipement sert notamment à contrôler le cheval lors des soins ?",
+reponses:["Licou","Ruche","Abreuvoir à poissons","Mangeoire à volaille"],
+bonne:0,
+explication:"Le licou permet notamment de manipuler et contrôler le cheval."
+},
+
+/* ==================== LAPINS ==================== */
+
+{
+categorie:"lapins",
+question:"La myxomatose du lapin est causée par :",
+reponses:["Un virus","Une bactérie","Un champignon","Une carence"],
+bonne:0,
+explication:"La myxomatose est une maladie virale du lapin."
+},
+
+{
+categorie:"lapins",
+question:"Quelle maladie virale peut provoquer des hémorragies chez le lapin ?",
+reponses:["Maladie hémorragique virale","Otite","Mammite","Fourbure"],
+bonne:0,
+explication:"La maladie hémorragique virale du lapin est une maladie virale grave."
+},
+
+{
+categorie:"lapins",
+question:"Quel aliment apporte des fibres importantes au lapin ?",
+reponses:["Le foin","Le sel uniquement","L'eau uniquement","Les vitamines uniquement"],
+bonne:0,
+explication:"Le foin est une source importante de fibres pour le lapin."
+},
+
+{
+categorie:"lapins",
+question:"La coccidiose du lapin est causée par :",
+reponses:["Des protozoaires","Un virus uniquement","Un champignon uniquement","Un acarien uniquement"],
+bonne:0,
+explication:"La coccidiose est due à des protozoaires du genre Eimeria."
+},
+
+{
+categorie:"lapins",
+question:"Quel problème dentaire est fréquent chez le lapin ?",
+reponses:["Malocclusion dentaire","Mammite","Fourbure bovine","Gourme"],
+bonne:0,
+explication:"Les dents du lapin poussent continuellement et peuvent présenter des problèmes de malocclusion."
+},
+
+{
+categorie:"lapins",
+question:"La stase gastro-intestinale concerne :",
+reponses:["Le fonctionnement du tube digestif","Les oreilles","Les yeux uniquement","Les membres"],
+bonne:0,
+explication:"La stase gastro-intestinale correspond à un ralentissement important du transit digestif."
+},
+
+{
+categorie:"lapins",
+question:"Quel organe fait partie du système respiratoire du lapin ?",
+reponses:["Les poumons","Le rumen","La mamelle","Les sabots"],
+bonne:0,
+explication:"Les poumons appartiennent au système respiratoire."
+},
+
+{
+categorie:"lapins",
+question:"La pasteurellose du lapin est causée par :",
+reponses:["Une bactérie","Un virus uniquement","Un champignon","Une carence"],
+bonne:0,
+explication:"La pasteurellose est une maladie bactérienne."
+},
+
+{
+categorie:"lapins",
+question:"Quel parasite peut provoquer une gale auriculaire chez le lapin ?",
+reponses:["Un acarien","Un virus","Une bactérie uniquement","Un protozoaire uniquement"],
+bonne:0,
+explication:"La gale auriculaire est provoquée par un acarien parasite."
+},
+
+{
+categorie:"lapins",
+question:"Quel est le principal aliment fibreux utilisé dans l'alimentation du lapin ?",
+reponses:["Foin","Viande","Poisson","Sel"],
+bonne:0,
+explication:"Le foin constitue une source importante de fibres dans l'alimentation du lapin."
+},
+
+/* ==================== POISSONS ==================== */
+
+{
+categorie:"poissons",
+question:"Pourquoi la qualité de l'eau est-elle importante pour les poissons ?",
+reponses:["Elle influence directement leur santé","Elle change leur espèce","Elle remplace leur alimentation","Elle empêche toute maladie"],
+bonne:0,
+explication:"La qualité de l'eau influence fortement la santé et le bien-être des poissons."
+},
+
+{
+categorie:"poissons",
+question:"La maladie des points blancs touche principalement :",
+reponses:["Les poissons","Les chiens","Les bovins","Les chevaux"],
+bonne:0,
+explication:"La maladie des points blancs est une maladie parasitaire des poissons."
+},
+
+{
+categorie:"poissons",
+question:"Quel organe permet principalement aux poissons de respirer dans l'eau ?",
+reponses:["Les branchies","Les poumons uniquement","Le rumen","La trachée"],
+bonne:0,
+explication:"Les branchies permettent aux poissons d'extraire l'oxygène dissous dans l'eau."
+},
+
+{
+categorie:"poissons",
+question:"La pourriture des nageoires concerne principalement :",
+reponses:["Les nageoires","Les branchies uniquement","Les yeux uniquement","Le foie uniquement"],
+bonne:0,
+explication:"La pourriture des nageoires se manifeste au niveau des nageoires."
+},
+
+{
+categorie:"poissons",
+question:"La saprolegniose est principalement associée à :",
+reponses:["Des organismes de type champignon","Des virus uniquement","Des tiques","Des vers pulmonaires"],
+bonne:0,
+explication:"La saprolegniose est une affection associée à des oomycètes, souvent appelés champignons aquatiques."
+},
+
+{
+categorie:"poissons",
+question:"Quel paramètre de l'eau est essentiel à la respiration des poissons ?",
+reponses:["Oxygène dissous","Couleur uniquement","Forme du bassin uniquement","Taille des pierres uniquement"],
+bonne:0,
+explication:"L'oxygène dissous est essentiel à la respiration des poissons."
+},
+
+{
+categorie:"poissons",
+question:"L'aéromonose des poissons est généralement associée à :",
+reponses:["Des bactéries","Des virus uniquement","Des champignons uniquement","Des insectes"],
+bonne:0,
+explication:"Les bactéries du genre Aeromonas peuvent provoquer des infections chez les poissons."
+},
+
+{
+categorie:"poissons",
+question:"Quel facteur peut favoriser les maladies chez les poissons ?",
+reponses:["Une mauvaise qualité de l'eau","Une bonne qualité de l'eau","Une bonne filtration","Une alimentation adaptée"],
+bonne:0,
+explication:"Une mauvaise qualité de l'eau peut favoriser le stress et certaines maladies."
+},
+
+{
+categorie:"poissons",
+question:"Quel système permet aux poissons de maintenir leur équilibre dans l'eau ?",
+reponses:["La vessie natatoire chez de nombreuses espèces","Le rumen","Les sabots","La mamelle"],
+bonne:0,
+explication:"Chez de nombreuses espèces, la vessie natatoire participe à la régulation de la flottabilité."
+},
+
+{
+categorie:"poissons",
+question:"Les vers branchiaux affectent principalement :",
+reponses:["Les branchies","Les sabots","Les dents","La queue uniquement"],
+bonne:0,
+explication:"Les vers branchiaux sont des parasites qui peuvent affecter les branchies des poissons."
+}
+
+];
+
+let questionsActives = [];
+let indexQuestion = 0;
+let score = 0;
+let categorieActuelle = "tous";
+let repondu = false;
+
+
+/* ==================== CHOIX CATEGORIE ==================== */
+
+function choisirCategorie(categorie,bouton){
+
+  categorieActuelle = categorie;
+
+  document.querySelectorAll(".categories button").forEach(btn=>{
+    btn.classList.remove("active");
+  });
+
+  bouton.classList.add("active");
+
+  demarrerQuiz();
+}
+
+
+/* ==================== DEMARRER ==================== */
+
+function demarrerQuiz(){
+
+  if(categorieActuelle === "tous"){
+    questionsActives = [...questions];
+  }else{
+    questionsActives = questions.filter(
+      q => q.categorie === categorieActuelle
+    );
+  }
+
+  indexQuestion = 0;
+  score = 0;
+  repondu = false;
+
+  document.getElementById("quiz").style.display = "block";
+  document.getElementById("resultat").style.display = "none";
+
+  afficherQuestion();
+}
+
+
+/* ==================== AFFICHER QUESTION ==================== */
+
+function afficherQuestion(){
+
+  if(indexQuestion >= questionsActives.length){
+    afficherResultat();
+    return;
+  }
+
+  repondu = false;
+
+  const q = questionsActives[indexQuestion];
+
+  document.getElementById("compteur").textContent =
+    "Question " + (indexQuestion + 1) +
+    " / " + questionsActives.length;
+
+  document.getElementById("question").textContent =
+    q.question;
+
+  const conteneur =
+    document.getElementById("reponses");
+
+  conteneur.innerHTML = "";
+
+  q.reponses.forEach((reponse,i)=>{
+
+    const bouton =
+      document.createElement("button");
+
+    bouton.textContent = reponse;
+
+    bouton.onclick = function(){
+      verifierReponse(i,bouton);
+    };
+
+    conteneur.appendChild(bouton);
+  });
+
+  document.getElementById("explication").style.display =
+    "none";
+
+  document.getElementById("explication").innerHTML = "";
+
+  document.getElementById("suivant").style.display =
+    "none";
+
+  const pourcentage =
+    (indexQuestion / questionsActives.length) * 100;
+
+  document.getElementById("progress").style.width =
+    pourcentage + "%";
+}
+
+
+/* ==================== VERIFIER ==================== */
+
+function verifierReponse(index,boutonClique){
+
+  if(repondu) return;
+
+  repondu = true;
+
+  const q = questionsActives[indexQuestion];
+
+  const boutons =
+    document.querySelectorAll("#reponses button");
+
+  boutons.forEach(btn=>{
+    btn.disabled = true;
+  });
+
+  if(index === q.bonne){
+
+    boutonClique.classList.add("bonne");
+
+    score++;
+
+  }else{
+
+    boutonClique.classList.add("mauvaise");
+
+    boutons[q.bonne].classList.add("bonne");
+  }
+
+  const explication =
+    document.getElementById("explication");
+
+  explication.innerHTML =
+    "<strong>💡 Explication :</strong><br>" +
+    q.explication;
+
+  explication.style.display = "block";
+
+  document.getElementById("suivant").style.display =
+    "block";
+}
+
+
+/* ==================== QUESTION SUIVANTE ==================== */
+
+function questionSuivante(){
+
+  indexQuestion++;
+
+  afficherQuestion();
+}
+
+
+/* ==================== RESULTAT ==================== */
+
+function afficherResultat(){
+
+  document.getElementById("quiz").style.display =
+    "none";
+
+  document.getElementById("resultat").style.display =
+    "block";
+
+  document.getElementById("progress").style.width =
+    "100%";
+
+  document.getElementById("scoreFinal").textContent =
+    score + " / " + questionsActives.length;
+
+  let message = "";
+
+  const pourcentage =
+    (score / questionsActives.length) * 100;
+
+  if(pourcentage >= 80){
+
+    message =
+      "🌟 Excellent ! Tes connaissances vétérinaires sont très bonnes.";
+
+  }else if(pourcentage >= 60){
+
+    message =
+      "👏 Très bien ! Continue à approfondir tes connaissances.";
+
+  }else if(pourcentage >= 40){
+
+    message =
+      "📚 Bon début ! Continue à apprendre et à t'entraîner.";
+
+  }else{
+
+    message =
+      "💪 Continue tes révisions, tu progresseras avec la pratique.";
+  }
+
+  document.getElementById("messageFinal").textContent =
+    message;
+}
+
+
+/* ==================== RECOMMENCER ==================== */
+
+function recommencerQuiz(){
+
+  demarrerQuiz();
+}
+
+
+/* ==================== LANCEMENT ==================== */
+
+demarrerQuiz();
+
+</script>
+
+</body>
+</html>
