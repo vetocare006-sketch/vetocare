@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VETOCARE - Accueil</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f8f5;
+  color:#1f2937;
+}
+
+/* HEADER */
+header{
+  background:#176b45;
+  color:white;
+  padding:18px 12px;
+  text-align:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.15);
+}
+
+.logo{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  font-size:28px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.logo-patte{
+  font-size:34px;
+  display:inline-block;
+}
+
+.slogan{
+  margin:0 0 15px;
+  font-size:14px;
+  opacity:.9;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:5px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  padding:10px 14px;
+  border-radius:25px;
+  background:rgba(255,255,255,.15);
+  font-size:14px;
+  font-weight:bold;
+  transition:.2s;
+  border:1px solid rgba(255,255,255,.12);
+}
+
+nav a:hover{
+  background:white;
+  color:#176b45;
+  transform:translateY(-2px);
+}
+
+@media(max-width:600px){
+
+  nav{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+    padding:0 5px;
+  }
+
+  nav a{
+    text-align:center;
+    padding:11px 6px;
+    font-size:13px;
+  }
+
+}
+/* HERO */
+.hero{
+  max-width:1000px;
+  margin:25px auto;
+  padding:40px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#176b45,#23965f);
+  color:white;
+  border-radius:25px;
+  box-shadow:0 8px 25px rgba(0,0,0,.12);
+}
+
+.hero h1{
+  font-size:34px;
+  margin:0 0 15px;
+}
+
+.hero p{
+  font-size:17px;
+  line-height:1.6;
+  max-width:700px;
+  margin:0 auto 22px;
+}
+
+.hero-button{
+  display:inline-block;
+  background:white;
+  color:#176b45;
+  text-decoration:none;
+  padding:13px 22px;
+  border-radius:25px;
+  font-weight:bold;
+}
+
+/* CONTENU */
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:0 14px 40px;
+}
+
+.section-title{
+  text-align:center;
+  color:#176b45;
+  margin:30px 0 20px;
+}
+
+/* CARTES */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:white;
+  padding:22px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.icon{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.card h3{
+  color:#176b45;
+  margin:8px 0;
+}
+
+.card p{
+  font-size:14px;
+  line-height:1.5;
+}
+
+.card a{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 16px;
+  border-radius:20px;
+  background:#176b45;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:14px;
+}
+
+/* STATISTIQUES */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:30px;
+}
+
+.stat{
+  background:white;
+  text-align:center;
+  padding:20px 10px;
+  border-radius:17px;
+  box-shadow:0 4px 15px rgba(0,0,0,.07);
+}
+
+.stat strong{
+  display:block;
+  color:#176b45;
+  font-size:30px;
+}
+
+.stat span{
+  font-size:13px;
+}
+
+/* PRESENTATION */
+.about{
+  background:white;
+  margin-top:30px;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 4px 15px rgba(0,0,0,.07);
+  line-height:1.7;
+}
+
+.about h2{
+  color:#176b45;
+}
+
+/* FOOTER */
+footer{
+  background:#176b45;
+  color:white;
+  text-align:center;
+  padding:22px 12px;
+  margin-top:20px;
+}
+
+/* TELEPHONE */
+@media(max-width:600px){
+
+  .logo{
+    font-size:24px;
+  }
+
+  .hero{
+    margin:15px 10px;
+    padding:30px 15px;
+    border-radius:20px;
+  }
+
+  .hero h1{
+    font-size:27px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  nav a{
+    font-size:13px;
+    padding:8px 10px;
+  }
+}
+  /* ÉCRAN DE BIENVENUE */
+#ecranBienvenue{
+  position:fixed;
+  inset:0;
+  background:#176b45;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  text-align:center;
+  color:white;
+}
+
+.bienvenue-box{
+  width:90%;
+  max-width:400px;
+  padding:35px 20px;
+}
+
+.bienvenue-logo{
+  font-size:70px;
+  margin-bottom:10px;
+}
+
+.bienvenue-box h1{
+  font-size:38px;
+  margin:10px 0;
+}
+
+.bienvenue-box p{
+  font-size:15px;
+  line-height:1.5;
+  opacity:.9;
+}
+
+.bienvenue-box button{
+  margin-top:20px;
+  padding:14px 28px;
+  border:0;
+  border-radius:30px;
+  background:white;
+  color:#176b45;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+<!-- ÉCRAN DE BIENVENUE -->
+<div id="ecranBienvenue">
+
+  <div class="bienvenue-box">
+
+    <div class="bienvenue-logo">🐾</div>
+
+    <h1>VETOCARE</h1>
+
+    <p>La santé animale au cœur de nos connaissances</p>
+
+    <button onclick="entrerDansVetoCare()">
+      🚀 Commencer
+    </button>
+
+  </div>
+
+</div>
+  
+<header>
+
+  <div class="logo">
+  <span class="logo-patte">🐾</span>
+  <span>VETOCARE</span>
+</div>
+
+  <p class="slogan">
+    La santé animale au cœur de nos connaissances
+  </p>
+
+  <nav>
+    <a href="index.html">🏠 Accueil</a>
+    <a href="animaux.html">🐾 Animaux</a>
+    <a href="maladies.html">🦠 Maladies</a>
+    <a href="conseils.html">💡 Conseils</a>
+    <a href="quiz.html">🧠 Quiz</a>
+  </nav>
+
+</header>
+
+
+<section class="hero">
+
+  <h1>Bienvenue sur VETOCARE 🐾</h1>
+
+  <p>
+    Une plateforme éducative dédiée à la santé animale.
+    Découvrez les animaux, les maladies, les conseils vétérinaires
+    et testez vos connaissances grâce à notre quiz.
+  </p>
+
+  <a class="hero-button" href="animaux.html">
+    🐾 Découvrir les animaux
+  </a>
+
+</section>
+
+
+<div class="container">
+
+  <h2 class="section-title">
+    📚 Que voulez-vous découvrir ?
+  </h2>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <div class="icon">🐾</div>
+
+      <h3>Animaux</h3>
+
+      <p>
+        Découvrez différentes espèces animales
+        et leurs principales caractéristiques.
+      </p>
+
+      <a href="animaux.html">
+        Voir les animaux
+      </a>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">🦠</div>
+
+      <h3>Maladies</h3>
+
+      <p>
+        Explorez une grande collection de maladies
+        animales et leurs informations essentielles.
+      </p>
+
+      <a href="maladies.html">
+        Voir les maladies
+      </a>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">💡</div>
+
+      <h3>Conseils</h3>
+
+      <p>
+        Retrouvez des conseils généraux de prévention,
+        d'hygiène et de soins animaliers.
+      </p>
+
+      <a href="conseils.html">
+        Voir les conseils
+      </a>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">🧠</div>
+
+      <h3>Quiz vétérinaire</h3>
+
+      <p>
+        Testez vos connaissances avec
+        100 questions vétérinaires.
+      </p>
+
+      <a href="quiz.html">
+        Commencer le quiz
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <h2 class="section-title">
+    📊 VETOCARE en quelques chiffres
+  </h2>
+
+  <div class="stats">
+
+    <div class="stat">
+      <strong>300+</strong>
+      <span>Maladies animales</span>
+    </div>
+
+    <div class="stat">
+      <strong>100</strong>
+      <span>Questions de quiz</span>
+    </div>
+
+    <div class="stat">
+      <strong>🐾</strong>
+      <span>Passion pour la santé animale</span>
+    </div>
+
+  </div>
+
+
+  <div class="about">
+
+    <h2>🐾 À propos de VETOCARE</h2>
+
+    <p>
+      VETOCARE est un projet éducatif consacré à la
+      médecine et à la santé animales.
+    </p>
+
+    <p>
+      Le site permet aux étudiants, éleveurs et passionnés
+      d'animaux de découvrir des informations générales sur
+      les animaux, les maladies, la prévention et les bonnes
+      pratiques d'élevage.
+    </p>
+
+    <p>
+      ⚠️ Les informations présentées sur VETOCARE ont un
+      objectif éducatif et ne remplacent pas la consultation
+      d'un médecin vétérinaire.
+    </p>
+
+  </div>
+
+</div>
+
+
+<footer>
+  © 2026 VETOCARE — Pour la santé animale 🐾
+</footer>
+  
+<script>
+function entrerDansVetoCare(){
+  document.getElementById("ecranBienvenue").style.display = "none";
+}
+</script>
+  
+</body>
+</html>
