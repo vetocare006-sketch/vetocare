@@ -1,0 +1,3658 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VETOCARE - Maladies</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f8f5;
+    color:#1f2937;
+}
+
+header{
+    background:#176b45;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+}
+
+.container{
+    padding:15px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.recherche{
+    width:100%;
+    box-sizing:border-box;
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+.categories{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:20px;
+}
+
+.categories button{
+    border:none;
+    background:#176b45;
+    color:white;
+    padding:10px 13px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.categories button:hover{
+    background:#0e5134;
+}
+
+.maladie{
+    background:white;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:15px;
+    box-shadow:0 2px 7px rgba(0,0,0,0.08);
+    border-left:5px solid #176b45;
+}
+
+.maladie h2{
+    color:#176b45;
+    margin-top:0;
+}
+
+.maladie p{
+    line-height:1.6;
+}
+
+.maladie ul{
+    line-height:1.7;
+}
+
+.message-vide{
+    display:none;
+    text-align:center;
+    padding:25px;
+    color:#666;
+}
+
+footer{
+    margin-top:30px;
+    background:#176b45;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🐾 VETOCARE</h1>
+    <p>Guide des maladies animales</p>
+</header>
+
+<div class="container">
+
+<h2>🔎 Rechercher une maladie</h2>
+
+<input
+    type="text"
+    id="rechercheMaladie"
+    class="recherche"
+    placeholder="Exemple : gastrite, rage, mammite..."
+    onkeyup="rechercherMaladie()"
+>
+
+<div class="categories">
+
+<button onclick="filtrer('toutes')">Toutes</button>
+<button onclick="filtrer('chiens')">🐕 Chiens</button>
+<button onclick="filtrer('chats')">🐈 Chats</button>
+<button onclick="filtrer('bovins')">🐄 Bovins</button>
+<button onclick="filtrer('volailles')">🐔 Volailles</button>
+<button onclick="filtrer('petits-ruminants')">🐐 Petits ruminants</button>
+<button onclick="filtrer('porcs')">🐖 Porcs</button>
+<button onclick="filtrer('equides')">🐎 Équidés</button>
+<button onclick="filtrer('lapins')">🐇 Lapins</button>
+<button onclick="filtrer('poissons')">🐟 Poissons</button>
+<button onclick="filtrer('autres')">🐾 Autres</button>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- MALADIE 1 -->
+<!-- ========================= -->
+
+<div class="maladie" data-categorie="chiens">
+
+<h2>1. Gastrite chez le chien</h2>
+
+<p><strong>Animal :</strong> Chien</p>
+
+<p><strong>Symptômes :</strong>
+vomissements, perte d'appétit, douleur abdominale et fatigue.</p>
+
+<p><strong>Traitement :</strong>
+réhydratation, alimentation adaptée et traitement de la cause.</p>
+
+<p><strong>Médicaments :</strong>
+selon le diagnostic et la prescription du vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon le médicament prescrit et la voie recommandée par le vétérinaire.</p>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="maladie" data-categorie="chiens">
+
+<h2>2. Parvovirose canine</h2>
+
+<p><strong>Animal :</strong> Chien</p>
+
+<p><strong>Symptômes :</strong>
+vomissements, diarrhée importante, abattement et déshydratation.</p>
+
+<p><strong>Traitement :</strong>
+soins de soutien, réhydratation et prise en charge vétérinaire rapide.</p>
+
+<p><strong>Médicaments :</strong>
+traitement symptomatique prescrit par le vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon l'état de l'animal et la prescription.</p>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="maladie" data-categorie="chiens">
+
+<h2>3. Maladie de Carré</h2>
+
+<p><strong>Animal :</strong> Chien</p>
+
+<p><strong>Symptômes :</strong>
+fièvre, écoulements, toux, troubles digestifs et parfois neurologiques.</p>
+
+<p><strong>Traitement :</strong>
+soins de soutien et traitement des complications.</p>
+
+<p><strong>Médicaments :</strong>
+selon les signes observés et la prescription vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="maladie" data-categorie="chiens">
+
+<h2>4. Rage canine</h2>
+
+<p><strong>Animal :</strong> Chien</p>
+
+<p><strong>Symptômes :</strong>
+modifications du comportement, troubles neurologiques et difficulté à avaler.</p>
+
+<p><strong>Traitement :</strong>
+la prévention par vaccination est essentielle. Toute suspicion nécessite une prise en charge sanitaire urgente.</p>
+
+<p><strong>Médicaments :</strong>
+aucun traitement curatif courant à administrer à domicile.</p>
+
+<p><strong>Mode d'administration :</strong>
+prise en charge par les services vétérinaires.</p>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="maladie" data-categorie="chiens">
+
+<h2>5. Toux de chenil</h2>
+
+<p><strong>Animal :</strong> Chien</p>
+
+<p><strong>Symptômes :</strong>
+toux sèche, irritation de la gorge et parfois écoulement nasal.</p>
+
+<p><strong>Traitement :</strong>
+repos, surveillance et traitement selon la cause.</p>
+
+<p><strong>Médicaments :</strong>
+uniquement sur prescription vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon le médicament prescrit.</p>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="maladie" data-categorie="chiens">
+
+<h2>6. Otite canine</h2>
+
+<p><strong>Animal :</strong> Chien</p>
+
+<p><strong>Symptômes :</strong>
+secouement de la tête, grattage de l'oreille, douleur et écoulement.</p>
+
+<p><strong>Traitement :</strong>
+nettoyage adapté et traitement de la cause.</p>
+
+<p><strong>Médicaments :</strong>
+produit auriculaire approprié selon l'examen vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+voie auriculaire lorsque prescrite.</p>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="maladie" data-categorie="chiens">
+
+<h2>7. Dermatite allergique</h2>
+
+<p><strong>Animal :</strong> Chien</p>
+
+<p><strong>Symptômes :</strong>
+démangeaisons, rougeur, léchage et irritation de la peau.</p>
+
+<p><strong>Traitement :</strong>
+recherche de la cause, contrôle des parasites et soins cutanés adaptés.</p>
+
+<p><strong>Médicaments :</strong>
+selon l'origine de l'allergie.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="maladie" data-categorie="chiens">
+
+<h2>8. Dirofilariose canine</h2>
+
+<p><strong>Animal :</strong> Chien</p>
+
+<p><strong>Symptômes :</strong>
+toux, fatigue, baisse de performance et difficultés respiratoires.</p>
+
+<p><strong>Traitement :</strong>
+prise en charge vétérinaire spécialisée et prévention contre les vecteurs.</p>
+
+<p><strong>Médicaments :</strong>
+traitement antiparasitaire spécifique prescrit par le vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="maladie" data-categorie="chiens">
+
+<h2>9. Leishmaniose canine</h2>
+
+<p><strong>Animal :</strong> Chien</p>
+
+<p><strong>Symptômes :</strong>
+amaigrissement, lésions cutanées, fatigue et anomalies générales.</p>
+
+<p><strong>Traitement :</strong>
+prise en charge longue durée et surveillance vétérinaire.</p>
+
+<p><strong>Médicaments :</strong>
+antiparasitaires spécifiques selon diagnostic.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription vétérinaire.</p>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="maladie" data-categorie="chiens">
+
+<h2>10. Babésiose canine</h2>
+
+<p><strong>Animal :</strong> Chien</p>
+
+<p><strong>Symptômes :</strong>
+fièvre, faiblesse, muqueuses pâles et troubles généraux.</p>
+
+<p><strong>Traitement :</strong>
+traitement spécifique et soins de soutien.</p>
+
+<p><strong>Médicaments :</strong>
+prescrits après confirmation du diagnostic.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="maladie" data-categorie="chats">
+
+<h2>11. Coryza félin</h2>
+
+<p><strong>Animal :</strong> Chat</p>
+
+<p><strong>Symptômes :</strong>
+éternuements, écoulements nasaux, conjonctivite et perte d'appétit.</p>
+
+<p><strong>Traitement :</strong>
+soins de soutien, hydratation et traitement des complications.</p>
+
+<p><strong>Médicaments :</strong>
+selon le diagnostic vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="maladie" data-categorie="chats">
+
+<h2>12. Panleucopénie féline</h2>
+
+<p><strong>Animal :</strong> Chat</p>
+
+<p><strong>Symptômes :</strong>
+vomissements, diarrhée, fièvre et abattement.</p>
+
+<p><strong>Traitement :</strong>
+soins intensifs de soutien et réhydratation.</p>
+
+<p><strong>Médicaments :</strong>
+selon prescription vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon l'état de l'animal.</p>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="maladie" data-categorie="chats">
+
+<h2>13. Gingivite féline</h2>
+
+<p><strong>Animal :</strong> Chat</p>
+
+<p><strong>Symptômes :</strong>
+gencives rouges, douleur, mauvaise haleine et difficulté à manger.</p>
+
+<p><strong>Traitement :</strong>
+soins bucco-dentaires et recherche de la cause.</p>
+
+<p><strong>Médicaments :</strong>
+selon examen vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="maladie" data-categorie="chats">
+
+<h2>14. Otite féline</h2>
+
+<p><strong>Animal :</strong> Chat</p>
+
+<p><strong>Symptômes :</strong>
+grattage de l'oreille, douleur et écoulement.</p>
+
+<p><strong>Traitement :</strong>
+nettoyage et traitement de la cause.</p>
+
+<p><strong>Médicaments :</strong>
+traitement auriculaire adapté.</p>
+
+<p><strong>Mode d'administration :</strong>
+voie auriculaire si prescrite.</p>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="maladie" data-categorie="chats">
+
+<h2>15. Toxoplasmose féline</h2>
+
+<p><strong>Animal :</strong> Chat</p>
+
+<p><strong>Symptômes :</strong>
+souvent absents, mais certaines formes peuvent provoquer fièvre, fatigue ou troubles généraux.</p>
+
+<p><strong>Traitement :</strong>
+prise en charge selon les signes cliniques.</p>
+
+<p><strong>Médicaments :</strong>
+selon diagnostic vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 16 -->
+
+<div class="maladie" data-categorie="chats">
+
+<h2>16. Teigne du chat</h2>
+
+<p><strong>Animal :</strong> Chat</p>
+
+<p><strong>Symptômes :</strong>
+zones dépilées, squames et lésions cutanées.</p>
+
+<p><strong>Traitement :</strong>
+antifongique et hygiène de l'environnement.</p>
+
+<p><strong>Médicaments :</strong>
+antifongique adapté selon prescription.</p>
+
+<p><strong>Mode d'administration :</strong>
+locale ou générale selon le cas.</p>
+
+</div>
+
+
+<!-- 17 -->
+
+<div class="maladie" data-categorie="chats">
+
+<h2>17. Maladie rénale chronique du chat</h2>
+
+<p><strong>Animal :</strong> Chat</p>
+
+<p><strong>Symptômes :</strong>
+augmentation de la soif, augmentation des urines, amaigrissement et fatigue.</p>
+
+<p><strong>Traitement :</strong>
+alimentation adaptée, hydratation et suivi vétérinaire.</p>
+
+<p><strong>Médicaments :</strong>
+selon les analyses et les complications.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 18 -->
+
+<div class="maladie" data-categorie="chats">
+
+<h2>18. Diabète sucré félin</h2>
+
+<p><strong>Animal :</strong> Chat</p>
+
+<p><strong>Symptômes :</strong>
+soif importante, urines fréquentes, faim accrue et perte de poids.</p>
+
+<p><strong>Traitement :</strong>
+alimentation adaptée et suivi vétérinaire.</p>
+
+<p><strong>Médicaments :</strong>
+traitement spécifique uniquement sur prescription.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription vétérinaire.</p>
+
+</div>
+
+
+<!-- 19 -->
+
+<div class="maladie" data-categorie="bovins">
+
+<h2>19. Mammite bovine</h2>
+
+<p><strong>Animal :</strong> Bovin</p>
+
+<p><strong>Symptômes :</strong>
+mamelle chaude ou douloureuse et modification du lait.</p>
+
+<p><strong>Traitement :</strong>
+diagnostic de la cause et traitement vétérinaire.</p>
+
+<p><strong>Médicaments :</strong>
+antimicrobien approprié uniquement après évaluation vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon le protocole vétérinaire.</p>
+
+</div>
+
+
+<!-- 20 -->
+
+<div class="maladie" data-categorie="bovins">
+
+<h2>20. Fièvre aphteuse</h2>
+
+<p><strong>Animal :</strong> Bovin</p>
+
+<p><strong>Symptômes :</strong>
+fièvre, lésions de la bouche et boiterie.</p>
+
+<p><strong>Traitement :</strong>
+maladie réglementée nécessitant une intervention des services vétérinaires.</p>
+
+<p><strong>Médicaments :</strong>
+ne pas traiter soi-même.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon les mesures sanitaires officielles.</p>
+
+</div>
+
+
+<!-- 21 -->
+
+<div class="maladie" data-categorie="bovins">
+
+<h2>21. Brucellose bovine</h2>
+
+<p><strong>Animal :</strong> Bovin</p>
+
+<p><strong>Symptômes :</strong>
+avortements, troubles de la reproduction et parfois infertilité.</p>
+
+<p><strong>Traitement :</strong>
+gestion sanitaire et contrôle du troupeau.</p>
+
+<p><strong>Médicaments :</strong>
+pas d'automédication.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon les mesures vétérinaires officielles.</p>
+
+</div>
+
+
+<!-- 22 -->
+
+<div class="maladie" data-categorie="bovins">
+
+<h2>22. Tuberculose bovine</h2>
+
+<p><strong>Animal :</strong> Bovin</p>
+
+<p><strong>Symptômes :</strong>
+amaigrissement progressif, toux chronique et baisse de production.</p>
+
+<p><strong>Traitement :</strong>
+dépistage et mesures sanitaires.</p>
+
+<p><strong>Médicaments :</strong>
+prise en charge réglementée.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon les autorités vétérinaires.</p>
+
+</div>
+
+
+<!-- 23 -->
+
+<div class="maladie" data-categorie="bovins">
+
+<h2>23. Dermatophilose bovine</h2>
+
+<p><strong>Animal :</strong> Bovin</p>
+
+<p><strong>Symptômes :</strong>
+croûtes et lésions de la peau.</p>
+
+<p><strong>Traitement :</strong>
+hygiène, réduction de l'humidité et traitement approprié.</p>
+
+<p><strong>Médicaments :</strong>
+selon diagnostic vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 24 -->
+
+<div class="maladie" data-categorie="bovins">
+
+<h2>24. Cétose bovine</h2>
+
+<p><strong>Animal :</strong> Bovin</p>
+
+<p><strong>Symptômes :</strong>
+baisse d'appétit, baisse de production et amaigrissement.</p>
+
+<p><strong>Traitement :</strong>
+correction de l'alimentation et prise en charge métabolique.</p>
+
+<p><strong>Médicaments :</strong>
+selon le diagnostic.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 25 -->
+
+<div class="maladie" data-categorie="bovins">
+
+<h2>25. Acidose ruminale</h2>
+
+<p><strong>Animal :</strong> Bovin</p>
+
+<p><strong>Symptômes :</strong>
+baisse d'appétit, diarrhée, diminution de la rumination et troubles digestifs.</p>
+
+<p><strong>Traitement :</strong>
+correction de la ration et prise en charge vétérinaire.</p>
+
+<p><strong>Médicaments :</strong>
+selon la gravité.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 26 -->
+
+<div class="maladie" data-categorie="bovins">
+
+<h2>26. Ballonnement ruminal</h2>
+
+<p><strong>Animal :</strong> Bovin</p>
+
+<p><strong>Symptômes :</strong>
+distension abdominale et difficulté respiratoire dans les cas graves.</p>
+
+<p><strong>Traitement :</strong>
+urgence vétérinaire lorsque le ballonnement est important.</p>
+
+<p><strong>Médicaments :</strong>
+selon la cause.</p>
+
+<p><strong>Mode d'administration :</strong>
+par le vétérinaire.</p>
+
+</div>
+
+
+<!-- 27 -->
+
+<div class="maladie" data-categorie="volailles">
+
+<h2>27. Maladie de Newcastle</h2>
+
+<p><strong>Animal :</strong> Volaille</p>
+
+<p><strong>Symptômes :</strong>
+troubles respiratoires, digestifs et nerveux.</p>
+
+<p><strong>Traitement :</strong>
+mesures sanitaires et soins de soutien.</p>
+
+<p><strong>Médicaments :</strong>
+il n'existe pas de traitement antiviral curatif spécifique courant.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon les recommandations vétérinaires.</p>
+
+</div>
+
+
+<!-- 28 -->
+
+<div class="maladie" data-categorie="volailles">
+
+<h2>28. Maladie de Gumboro</h2>
+
+<p><strong>Animal :</strong> Volaille</p>
+
+<p><strong>Symptômes :</strong>
+abattement, diarrhée et baisse des performances.</p>
+
+<p><strong>Traitement :</strong>
+soins de soutien et prévention vaccinale.</p>
+
+<p><strong>Médicaments :</strong>
+selon diagnostic vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 29 -->
+
+<div class="maladie" data-categorie="volailles">
+
+<h2>29. Coccidiose aviaire</h2>
+
+<p><strong>Animal :</strong> Volaille</p>
+
+<p><strong>Symptômes :</strong>
+diarrhée, abattement, retard de croissance et parfois sang dans les fientes.</p>
+
+<p><strong>Traitement :</strong>
+anticoccidien adapté et amélioration de l'hygiène.</p>
+
+<p><strong>Médicaments :</strong>
+anticoccidien selon diagnostic et prescription.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon le produit prescrit.</p>
+
+</div>
+
+
+<!-- 30 -->
+
+<div class="maladie" data-categorie="volailles">
+
+<h2>30. Bronchite infectieuse aviaire</h2>
+
+<p><strong>Animal :</strong> Volaille</p>
+
+<p><strong>Symptômes :</strong>
+toux, éternuements, écoulement nasal et baisse des performances.</p>
+
+<p><strong>Traitement :</strong>
+soins de soutien et contrôle des infections secondaires.</p>
+
+<p><strong>Médicaments :</strong>
+selon diagnostic vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 31 -->
+
+<div class="maladie" data-categorie="volailles">
+
+<h2>31. Pullorose</h2>
+
+<p><strong>Animal :</strong> Volaille</p>
+
+<p><strong>Symptômes :</strong>
+faiblesse, diarrhée blanchâtre et mortalité chez les jeunes oiseaux.</p>
+
+<p><strong>Traitement :</strong>
+mesures sanitaires et contrôle de l'élevage.</p>
+
+<p><strong>Médicaments :</strong>
+selon diagnostic et réglementation.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 32 -->
+
+<div class="maladie" data-categorie="volailles">
+
+<h2>32. Choléra aviaire</h2>
+
+<p><strong>Animal :</strong> Volaille</p>
+
+<p><strong>Symptômes :</strong>
+fièvre, abattement, diarrhée et mortalité.</p>
+
+<p><strong>Traitement :</strong>
+prise en charge vétérinaire et amélioration de l'hygiène.</p>
+
+<p><strong>Médicaments :</strong>
+antimicrobien uniquement sur prescription.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 33 -->
+
+<div class="maladie" data-categorie="volailles">
+
+<h2>33. Aspergillose aviaire</h2>
+
+<p><strong>Animal :</strong> Volaille</p>
+
+<p><strong>Symptômes :</strong>
+difficultés respiratoires, faiblesse et retard de croissance.</p>
+
+<p><strong>Traitement :</strong>
+amélioration de la qualité de la litière et de l'environnement.</p>
+
+<p><strong>Médicaments :</strong>
+selon diagnostic vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 34 -->
+
+<div class="maladie" data-categorie="petits-ruminants">
+
+<h2>34. Peste des petits ruminants</h2>
+
+<p><strong>Animal :</strong> Chèvre et mouton</p>
+
+<p><strong>Symptômes :</strong>
+fièvre, écoulements, lésions buccales, diarrhée et troubles respiratoires.</p>
+
+<p><strong>Traitement :</strong>
+soins de soutien et mesures sanitaires.</p>
+
+<p><strong>Médicaments :</strong>
+selon diagnostic vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 35 -->
+
+<div class="maladie" data-categorie="petits-ruminants">
+
+<h2>35. Entérotoxémie des petits ruminants</h2>
+
+<p><strong>Animal :</strong> Mouton et chèvre</p>
+
+<p><strong>Symptômes :</strong>
+douleur abdominale, diarrhée et mortalité parfois rapide.</p>
+
+<p><strong>Traitement :</strong>
+prise en charge urgente et prévention par vaccination.</p>
+
+<p><strong>Médicaments :</strong>
+selon diagnostic.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 36 -->
+
+<div class="maladie" data-categorie="petits-ruminants">
+
+<h2>36. Mammite caprine</h2>
+
+<p><strong>Animal :</strong> Chèvre</p>
+
+<p><strong>Symptômes :</strong>
+mamelle douloureuse, gonflée et modification du lait.</p>
+
+<p><strong>Traitement :</strong>
+diagnostic de la cause et traitement adapté.</p>
+
+<p><strong>Médicaments :</strong>
+selon prescription vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon protocole vétérinaire.</p>
+
+</div>
+
+
+<!-- 37 -->
+
+<div class="maladie" data-categorie="petits-ruminants">
+
+<h2>37. Piétin</h2>
+
+<p><strong>Animal :</strong> Mouton et chèvre</p>
+
+<p><strong>Symptômes :</strong>
+boiterie, douleur et lésions au niveau des pieds.</p>
+
+<p><strong>Traitement :</strong>
+soins des pieds, hygiène et traitement de l'infection.</p>
+
+<p><strong>Médicaments :</strong>
+selon diagnostic.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 38 -->
+
+<div class="maladie" data-categorie="petits-ruminants">
+
+<h2>38. Gale des petits ruminants</h2>
+
+<p><strong>Animal :</strong> Mouton et chèvre</p>
+
+<p><strong>Symptômes :</strong>
+démangeaisons, perte de poils ou de laine et lésions cutanées.</p>
+
+<p><strong>Traitement :</strong>
+traitement antiparasitaire et nettoyage de l'environnement.</p>
+
+<p><strong>Médicaments :</strong>
+acaricide approprié selon prescription.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon le produit utilisé.</p>
+
+</div>
+
+
+<!-- 39 -->
+
+<div class="maladie" data-categorie="porcs">
+
+<h2>39. Peste porcine africaine</h2>
+
+<p><strong>Animal :</strong> Porc</p>
+
+<p><strong>Symptômes :</strong>
+fièvre, abattement, troubles digestifs et mortalité.</p>
+
+<p><strong>Traitement :</strong>
+il n'existe pas de traitement curatif spécifique courant ; mesures sanitaires indispensables.</p>
+
+<p><strong>Médicaments :</strong>
+pas d'automédication.</p>
+
+<p><strong>Mode d'administration :</strong>
+mesures sanitaires officielles.</p>
+
+</div>
+
+
+<!-- 40 -->
+
+<div class="maladie" data-categorie="porcs">
+
+<h2>40. Peste porcine classique</h2>
+
+<p><strong>Animal :</strong> Porc</p>
+
+<p><strong>Symptômes :</strong>
+fièvre, faiblesse, troubles digestifs et parfois signes nerveux.</p>
+
+<p><strong>Traitement :</strong>
+mesures sanitaires et prévention.</p>
+
+<p><strong>Médicaments :</strong>
+prise en charge selon les autorités vétérinaires.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon protocole sanitaire.</p>
+
+</div>
+
+
+<!-- 41 -->
+
+<div class="maladie" data-categorie="porcs">
+
+<h2>41. Érysipèle du porc</h2>
+
+<p><strong>Animal :</strong> Porc</p>
+
+<p><strong>Symptômes :</strong>
+fièvre, abattement et lésions cutanées possibles.</p>
+
+<p><strong>Traitement :</strong>
+traitement antimicrobien adapté après diagnostic.</p>
+
+<p><strong>Médicaments :</strong>
+sur prescription vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 42 -->
+
+<div class="maladie" data-categorie="porcs">
+
+<h2>42. Pneumonie enzootique porcine</h2>
+
+<p><strong>Animal :</strong> Porc</p>
+
+<p><strong>Symptômes :</strong>
+toux persistante, respiration difficile et retard de croissance.</p>
+
+<p><strong>Traitement :</strong>
+amélioration de l'environnement et traitement selon diagnostic.</p>
+
+<p><strong>Médicaments :</strong>
+sur prescription vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 43 -->
+
+<div class="maladie" data-categorie="porcs">
+
+<h2>43. Gale sarcoptique du porc</h2>
+
+<p><strong>Animal :</strong> Porc</p>
+
+<p><strong>Symptômes :</strong>
+démangeaisons, croûtes et lésions cutanées.</p>
+
+<p><strong>Traitement :</strong>
+antiparasitaire et traitement de l'environnement.</p>
+
+<p><strong>Médicaments :</strong>
+acaricide selon prescription.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon le produit.</p>
+
+</div>
+
+
+<!-- 44 -->
+
+<div class="maladie" data-categorie="equides">
+
+<h2>44. Colique équine</h2>
+
+<p><strong>Animal :</strong> Cheval</p>
+
+<p><strong>Symptômes :</strong>
+agitation, douleur abdominale, transpiration et changements de comportement.</p>
+
+<p><strong>Traitement :</strong>
+urgence vétérinaire afin d'identifier la cause.</p>
+
+<p><strong>Médicaments :</strong>
+uniquement après évaluation vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+par le vétérinaire selon la cause.</p>
+
+</div>
+
+
+<!-- 45 -->
+
+<div class="maladie" data-categorie="equides">
+
+<h2>45. Fourbure</h2>
+
+<p><strong>Animal :</strong> Cheval</p>
+
+<p><strong>Symptômes :</strong>
+douleur des pieds, difficulté à se déplacer et posture anormale.</p>
+
+<p><strong>Traitement :</strong>
+repos, gestion alimentaire et prise en charge vétérinaire.</p>
+
+<p><strong>Médicaments :</strong>
+antalgiques ou autres traitements selon prescription.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 46 -->
+
+<div class="maladie" data-categorie="lapins">
+
+<h2>46. Myxomatose du lapin</h2>
+
+<p><strong>Animal :</strong> Lapin</p>
+
+<p><strong>Symptômes :</strong>
+gonflements autour des yeux et du visage, fièvre et abattement.</p>
+
+<p><strong>Traitement :</strong>
+soins de soutien et prévention par vaccination lorsque disponible.</p>
+
+<p><strong>Médicaments :</strong>
+selon diagnostic vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription.</p>
+
+</div>
+
+
+<!-- 47 -->
+
+<div class="maladie" data-categorie="lapins">
+
+<h2>47. Maladie hémorragique virale du lapin</h2>
+
+<p><strong>Animal :</strong> Lapin</p>
+
+<p><strong>Symptômes :</strong>
+abattement, fièvre et mortalité parfois rapide.</p>
+
+<p><strong>Traitement :</strong>
+mesures sanitaires et prévention vaccinale.</p>
+
+<p><strong>Médicaments :</strong>
+aucun traitement curatif spécifique courant.</p>
+
+<p><strong>Mode d'administration :</strong>
+mesures sanitaires.</p>
+
+</div>
+
+
+<!-- 48 -->
+
+<div class="maladie" data-categorie="lapins">
+
+<h2>48. Coccidiose du lapin</h2>
+
+<p><strong>Animal :</strong> Lapin</p>
+
+<p><strong>Symptômes :</strong>
+diarrhée, amaigrissement, faiblesse et retard de croissance.</p>
+
+<p><strong>Traitement :</strong>
+anticoccidien adapté et amélioration de l'hygiène.</p>
+
+<p><strong>Médicaments :</strong>
+anticoccidien selon prescription vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon le produit prescrit.</p>
+
+</div>
+
+
+<!-- 49 -->
+
+<div class="maladie" data-categorie="poissons">
+
+<h2>49. Ichthyophthiriose des poissons</h2>
+
+<p><strong>Animal :</strong> Poisson</p>
+
+<p><strong>Symptômes :</strong>
+petits points blancs sur le corps et les nageoires, frottement contre les surfaces et respiration anormale.</p>
+
+<p><strong>Traitement :</strong>
+traitement adapté au système aquatique et amélioration de la qualité de l'eau.</p>
+
+<p><strong>Médicaments :</strong>
+produit antiparasitaire adapté à l'espèce et au système.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon le produit et les recommandations vétérinaires.</p>
+
+</div>
+
+
+<!-- 50 -->
+
+<div class="maladie" data-categorie="autres">
+
+<h2>50. Salmonellose animale</h2>
+
+<p><strong>Animal :</strong> Plusieurs espèces</p>
+
+<p><strong>Symptômes :</strong>
+diarrhée, fièvre, abattement et troubles digestifs.</p>
+
+<p><strong>Traitement :</strong>
+réhydratation, hygiène et prise en charge selon la gravité.</p>
+
+<p><strong>Médicaments :</strong>
+antimicrobiens uniquement lorsqu'ils sont indiqués par le vétérinaire.</p>
+
+<p><strong>Mode d'administration :</strong>
+selon prescription vétérinaire.</p>
+
+</div>
+<!-- ========================= -->
+<!-- MALADIES 51 À 100 -->
+<!-- ========================= -->
+
+<div class="maladie" data-categorie="chiens">
+<h2>51. Hépatite infectieuse canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> fièvre, fatigue, perte d'appétit et troubles digestifs.</p>
+<p><strong>Traitement :</strong> soins de soutien et prise en charge vétérinaire.</p>
+<p><strong>Médicaments :</strong> selon le diagnostic vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>52. Pancréatite canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> vomissements, douleur abdominale, perte d'appétit et fatigue.</p>
+<p><strong>Traitement :</strong> alimentation adaptée, hydratation et soins vétérinaires.</p>
+<p><strong>Médicaments :</strong> selon prescription vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>53. Conjonctivite canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> yeux rouges, larmoiement et écoulement oculaire.</p>
+<p><strong>Traitement :</strong> nettoyage adapté et traitement de la cause.</p>
+<p><strong>Médicaments :</strong> traitement ophtalmique selon examen vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> voie oculaire si prescrite.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>54. Pyodermite canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> boutons, rougeurs, croûtes et démangeaisons.</p>
+<p><strong>Traitement :</strong> soins cutanés et recherche de la cause.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>55. Leptospirose canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> fièvre, fatigue, vomissements et troubles urinaires.</p>
+<p><strong>Traitement :</strong> prise en charge vétérinaire rapide.</p>
+<p><strong>Médicaments :</strong> traitement spécifique selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>56. Giardiose canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> diarrhée, selles anormales, amaigrissement et fatigue.</p>
+<p><strong>Traitement :</strong> traitement antiparasitaire et hygiène rigoureuse.</p>
+<p><strong>Médicaments :</strong> selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon le traitement choisi.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>57. Téniase canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> troubles digestifs, amaigrissement et présence de segments parasitaires dans les selles.</p>
+<p><strong>Traitement :</strong> vermifugation adaptée.</p>
+<p><strong>Médicaments :</strong> antiparasitaire approprié selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>58. Ankylostomose canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> diarrhée, faiblesse, amaigrissement et parfois anémie.</p>
+<p><strong>Traitement :</strong> vermifugation et correction des conséquences de l'infection.</p>
+<p><strong>Médicaments :</strong> antiparasitaire selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon le produit.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>59. Ascaridiose canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> ventre distendu, diarrhée, retard de croissance chez les jeunes.</p>
+<p><strong>Traitement :</strong> vermifugation adaptée et hygiène.</p>
+<p><strong>Médicaments :</strong> antiparasitaire selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>60. Sarcoptes du chien</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> démangeaisons intenses, croûtes et perte de poils.</p>
+<p><strong>Traitement :</strong> traitement acaricide et nettoyage de l'environnement.</p>
+<p><strong>Médicaments :</strong> acaricide adapté selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon le produit prescrit.</p>
+</div>
+
+
+<div class="maladie" data-categorie="chats">
+<h2>61. Pancréatite féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> perte d'appétit, vomissements, fatigue et douleur.</p>
+<p><strong>Traitement :</strong> hydratation, nutrition adaptée et soins vétérinaires.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>62. Conjonctivite féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> rougeur des yeux, larmoiement et écoulements.</p>
+<p><strong>Traitement :</strong> soins oculaires adaptés et traitement de la cause.</p>
+<p><strong>Médicaments :</strong> selon examen vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> voie oculaire si prescrite.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>63. Calicivirose féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> éternuements, écoulements et lésions buccales.</p>
+<p><strong>Traitement :</strong> soins de soutien et traitement des complications.</p>
+<p><strong>Médicaments :</strong> selon prescription vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>64. Rhinotrachéite virale féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> éternuements, écoulement nasal, conjonctivite et fièvre.</p>
+<p><strong>Traitement :</strong> soins de soutien et surveillance.</p>
+<p><strong>Médicaments :</strong> selon les complications.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>65. Dermatite aux puces du chat</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> démangeaisons, perte de poils et lésions cutanées.</p>
+<p><strong>Traitement :</strong> contrôle des puces sur l'animal et son environnement.</p>
+<p><strong>Médicaments :</strong> antiparasitaire adapté.</p>
+<p><strong>Mode d'administration :</strong> selon le produit prescrit.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>66. Otodectose féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> grattage des oreilles, secouement de la tête et débris dans le conduit auditif.</p>
+<p><strong>Traitement :</strong> traitement contre les acariens et nettoyage adapté.</p>
+<p><strong>Médicaments :</strong> acaricide selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon le produit.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>67. Maladie parodontale féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> mauvaise haleine, douleur et difficultés à manger.</p>
+<p><strong>Traitement :</strong> soins dentaires et hygiène buccale.</p>
+<p><strong>Médicaments :</strong> selon le vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>68. Lipidose hépatique féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> perte d'appétit, amaigrissement, faiblesse et parfois jaunisse.</p>
+<p><strong>Traitement :</strong> soutien nutritionnel et prise en charge de la cause.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>69. Urolithiase féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> difficultés à uriner, douleur et urines anormales.</p>
+<p><strong>Traitement :</strong> prise en charge vétérinaire, particulièrement en cas d'obstruction.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>70. Rhinite chronique féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> éternuements répétés et écoulements nasaux chroniques.</p>
+<p><strong>Traitement :</strong> recherche de la cause et soins de soutien.</p>
+<p><strong>Médicaments :</strong> selon diagnostic vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+
+<div class="maladie" data-categorie="bovins">
+<h2>71. Fièvre catarrhale maligne</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> fièvre, écoulements, lésions des muqueuses et abattement.</p>
+<p><strong>Traitement :</strong> soins de soutien et mesures sanitaires.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>72. Anaplasmose bovine</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> fièvre, faiblesse, anémie et baisse de production.</p>
+<p><strong>Traitement :</strong> traitement spécifique et soins de soutien.</p>
+<p><strong>Médicaments :</strong> selon diagnostic vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>73. Babésiose bovine</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> fièvre, faiblesse, anémie et urines foncées.</p>
+<p><strong>Traitement :</strong> traitement antiparasitaire spécifique et soins de soutien.</p>
+<p><strong>Médicaments :</strong> selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon le protocole vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>74. Trichomonose bovine</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> infertilité, retours en chaleur et avortements précoces.</p>
+<p><strong>Traitement :</strong> gestion de la reproduction et contrôle sanitaire.</p>
+<p><strong>Médicaments :</strong> selon les recommandations vétérinaires.</p>
+<p><strong>Mode d'administration :</strong> selon protocole.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>75. Fièvre Q bovine</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> troubles reproductifs et parfois signes généraux.</p>
+<p><strong>Traitement :</strong> gestion sanitaire du troupeau.</p>
+<p><strong>Médicaments :</strong> selon diagnostic vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>76. Déplacement de la caillette</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> baisse d'appétit, baisse de production et troubles digestifs.</p>
+<p><strong>Traitement :</strong> correction des facteurs favorisants et intervention vétérinaire.</p>
+<p><strong>Médicaments :</strong> selon le cas.</p>
+<p><strong>Mode d'administration :</strong> selon protocole vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>77. Hypocalcémie de la vache</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> faiblesse, difficulté à se lever et troubles musculaires.</p>
+<p><strong>Traitement :</strong> correction du déséquilibre minéral.</p>
+<p><strong>Médicaments :</strong> supplémentation prescrite par le vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon la gravité et prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>78. Métrite bovine</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> écoulement utérin anormal, fièvre et baisse d'appétit.</p>
+<p><strong>Traitement :</strong> examen reproductif et traitement adapté.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>79. Rétention placentaire bovine</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> absence d'expulsion normale du placenta après le vêlage.</p>
+<p><strong>Traitement :</strong> surveillance et prise en charge des complications.</p>
+<p><strong>Médicaments :</strong> selon l'examen vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>80. Dermatite digitale bovine</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> douleur, boiterie et lésions autour du pied.</p>
+<p><strong>Traitement :</strong> soins des pieds et hygiène.</p>
+<p><strong>Médicaments :</strong> traitement local selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+
+<div class="maladie" data-categorie="volailles">
+<h2>81. Laryngotrachéite infectieuse aviaire</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> toux, difficultés respiratoires et écoulements.</p>
+<p><strong>Traitement :</strong> soins de soutien et contrôle sanitaire.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>82. Encéphalomyélite aviaire</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> faiblesse, troubles de coordination et signes nerveux chez les jeunes.</p>
+<p><strong>Traitement :</strong> prévention et mesures d'élevage adaptées.</p>
+<p><strong>Médicaments :</strong> soins de soutien selon avis vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>83. Marek</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> faiblesse, amaigrissement et troubles nerveux.</p>
+<p><strong>Traitement :</strong> prévention principalement par vaccination.</p>
+<p><strong>Médicaments :</strong> aucun traitement curatif spécifique courant.</p>
+<p><strong>Mode d'administration :</strong> mesures de prévention.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>84. Histomonose aviaire</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> abattement, diarrhée et amaigrissement.</p>
+<p><strong>Traitement :</strong> contrôle parasitaire et hygiène de l'élevage.</p>
+<p><strong>Médicaments :</strong> selon réglementation et prescription vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>85. Colibacillose aviaire</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> abattement, troubles respiratoires et baisse des performances.</p>
+<p><strong>Traitement :</strong> amélioration de l'hygiène et traitement selon diagnostic.</p>
+<p><strong>Médicaments :</strong> antimicrobien uniquement sur prescription.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>86. Coryza infectieux aviaire</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> écoulement nasal, gonflement de la face et éternuements.</p>
+<p><strong>Traitement :</strong> soins de soutien et gestion sanitaire.</p>
+<p><strong>Médicaments :</strong> selon diagnostic vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>87. Typhose aviaire</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> abattement, diarrhée et baisse de production.</p>
+<p><strong>Traitement :</strong> contrôle sanitaire du troupeau.</p>
+<p><strong>Médicaments :</strong> selon diagnostic et réglementation.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>88. Variole aviaire</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> lésions cutanées et parfois lésions buccales.</p>
+<p><strong>Traitement :</strong> soins de soutien et prévention.</p>
+<p><strong>Médicaments :</strong> selon les complications.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>89. Verminose digestive aviaire</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> amaigrissement, diarrhée et baisse de croissance.</p>
+<p><strong>Traitement :</strong> vermifugation adaptée et hygiène.</p>
+<p><strong>Médicaments :</strong> antiparasitaire selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon le produit.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>90. Acariose respiratoire aviaire</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> respiration difficile, toux et agitation respiratoire.</p>
+<p><strong>Traitement :</strong> contrôle des parasites et amélioration de l'environnement.</p>
+<p><strong>Médicaments :</strong> acaricide adapté selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon le produit.</p>
+</div>
+
+
+<div class="maladie" data-categorie="petits-ruminants">
+<h2>91. Brucellose caprine</h2>
+<p><strong>Animal :</strong> Chèvre</p>
+<p><strong>Symptômes :</strong> avortements, infertilité et troubles de reproduction.</p>
+<p><strong>Traitement :</strong> contrôle sanitaire du troupeau.</p>
+<p><strong>Médicaments :</strong> pas d'automédication.</p>
+<p><strong>Mode d'administration :</strong> selon les mesures vétérinaires.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+<h2>92. Toxoplasmose ovine</h2>
+<p><strong>Animal :</strong> Mouton</p>
+<p><strong>Symptômes :</strong> troubles de reproduction et avortements.</p>
+<p><strong>Traitement :</strong> prévention et gestion sanitaire.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+<h2>93. Coccidiose caprine</h2>
+<p><strong>Animal :</strong> Chèvre</p>
+<p><strong>Symptômes :</strong> diarrhée, amaigrissement et retard de croissance.</p>
+<p><strong>Traitement :</strong> anticoccidien adapté et hygiène.</p>
+<p><strong>Médicaments :</strong> selon prescription vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon le produit.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+<h2>94. Strongylose digestive ovine</h2>
+<p><strong>Animal :</strong> Mouton</p>
+<p><strong>Symptômes :</strong> amaigrissement, diarrhée et faiblesse.</p>
+<p><strong>Traitement :</strong> vermifugation raisonnée et gestion du pâturage.</p>
+<p><strong>Médicaments :</strong> antiparasitaire selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+<h2>95. Pneumonie des agneaux</h2>
+<p><strong>Animal :</strong> Mouton</p>
+<p><strong>Symptômes :</strong> toux, écoulement nasal, fièvre et difficultés respiratoires.</p>
+<p><strong>Traitement :</strong> amélioration de l'environnement et soins vétérinaires.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+
+<div class="maladie" data-categorie="porcs">
+<h2>96. Colibacillose porcine</h2>
+<p><strong>Animal :</strong> Porc</p>
+<p><strong>Symptômes :</strong> diarrhée, déshydratation et faiblesse, surtout chez les jeunes.</p>
+<p><strong>Traitement :</strong> réhydratation et prise en charge de la cause.</p>
+<p><strong>Médicaments :</strong> selon diagnostic vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+<h2>97. Dysenterie porcine</h2>
+<p><strong>Animal :</strong> Porc</p>
+<p><strong>Symptômes :</strong> diarrhée persistante et baisse de croissance.</p>
+<p><strong>Traitement :</strong> traitement vétérinaire et hygiène de l'élevage.</p>
+<p><strong>Médicaments :</strong> antimicrobien selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon protocole vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+<h2>98. Rhinite atrophique porcine</h2>
+<p><strong>Animal :</strong> Porc</p>
+<p><strong>Symptômes :</strong> éternuements, écoulement nasal et déformation du groin dans les formes avancées.</p>
+<p><strong>Traitement :</strong> prévention et gestion sanitaire.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+<h2>99. Parvovirose porcine</h2>
+<p><strong>Animal :</strong> Porc</p>
+<p><strong>Symptômes :</strong> principalement troubles de la reproduction chez les reproductrices.</p>
+<p><strong>Traitement :</strong> prévention vaccinale et gestion de la reproduction.</p>
+<p><strong>Médicaments :</strong> pas de traitement curatif spécifique courant.</p>
+<p><strong>Mode d'administration :</strong> prévention selon protocole vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+<h2>100. Syndrome reproducteur et respiratoire porcin</h2>
+<p><strong>Animal :</strong> Porc</p>
+<p><strong>Symptômes :</strong> troubles respiratoires, fièvre et problèmes de reproduction.</p>
+<p><strong>Traitement :</strong> gestion sanitaire, biosécurité et soins de soutien.</p>
+<p><strong>Médicaments :</strong> selon diagnostic vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+  <!-- ========================= -->
+<!-- MALADIES 101 À 150 -->
+<!-- ========================= -->
+
+<div class="maladie" data-categorie="chiens">
+<h2>101. Insuffisance cardiaque canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> fatigue, toux, intolérance à l'effort et difficultés respiratoires.</p>
+<p><strong>Traitement :</strong> suivi vétérinaire et prise en charge de la maladie cardiaque.</p>
+<p><strong>Médicaments :</strong> selon examens et prescription vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>102. Sténose pulmonaire canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> fatigue à l'effort, faiblesse et parfois malaise.</p>
+<p><strong>Traitement :</strong> évaluation cardiologique et prise en charge adaptée.</p>
+<p><strong>Médicaments :</strong> selon le vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>103. Dysplasie de la hanche</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> boiterie, difficulté à se lever et douleur lors des mouvements.</p>
+<p><strong>Traitement :</strong> gestion du poids, exercice adapté et prise en charge vétérinaire.</p>
+<p><strong>Médicaments :</strong> antalgiques ou autres traitements prescrits.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>104. Arthrose canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> raideur, douleur et difficulté à se déplacer.</p>
+<p><strong>Traitement :</strong> exercice adapté, gestion du poids et suivi vétérinaire.</p>
+<p><strong>Médicaments :</strong> traitement contre la douleur selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>105. Épilepsie canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> épisodes convulsifs et modifications temporaires du comportement.</p>
+<p><strong>Traitement :</strong> bilan vétérinaire et contrôle des crises.</p>
+<p><strong>Médicaments :</strong> anticonvulsivant uniquement sur prescription.</p>
+<p><strong>Mode d'administration :</strong> selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>106. Hypothyroïdie canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> fatigue, prise de poids et modifications du pelage.</p>
+<p><strong>Traitement :</strong> traitement hormonal après confirmation du diagnostic.</p>
+<p><strong>Médicaments :</strong> hormone thyroïdienne prescrite.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>107. Maladie de Cushing</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> soif importante, urines fréquentes, faim accrue et modifications cutanées.</p>
+<p><strong>Traitement :</strong> prise en charge endocrinologique.</p>
+<p><strong>Médicaments :</strong> selon diagnostic vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>108. Insuffisance rénale aiguë canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> fatigue, vomissements, perte d'appétit et modifications de la production d'urine.</p>
+<p><strong>Traitement :</strong> urgence vétérinaire et correction de la cause.</p>
+<p><strong>Médicaments :</strong> selon examens.</p>
+<p><strong>Mode d'administration :</strong> par le vétérinaire selon l'état de l'animal.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>109. Entérite parasitaire canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> diarrhée, douleurs abdominales et amaigrissement.</p>
+<p><strong>Traitement :</strong> identification du parasite et traitement adapté.</p>
+<p><strong>Médicaments :</strong> antiparasitaire selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+<h2>110. Alopécie canine</h2>
+<p><strong>Animal :</strong> Chien</p>
+<p><strong>Symptômes :</strong> perte de poils, zones dégarnies et parfois démangeaisons.</p>
+<p><strong>Traitement :</strong> recherche de la cause et soins dermatologiques.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+
+<div class="maladie" data-categorie="chats">
+<h2>111. Cardiomyopathie hypertrophique féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> fatigue, respiration anormale ou parfois absence de signes visibles.</p>
+<p><strong>Traitement :</strong> suivi cardiologique et gestion des complications.</p>
+<p><strong>Médicaments :</strong> selon examen vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>112. Asthme félin</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> toux, respiration sifflante et difficultés respiratoires.</p>
+<p><strong>Traitement :</strong> réduction des irritants et traitement vétérinaire.</p>
+<p><strong>Médicaments :</strong> traitement respiratoire selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>113. Hyperthyroïdie féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> amaigrissement, faim accrue, agitation et soif importante.</p>
+<p><strong>Traitement :</strong> prise en charge endocrinologique.</p>
+<p><strong>Médicaments :</strong> traitement spécifique selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>114. Insuffisance cardiaque féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> fatigue et difficultés respiratoires.</p>
+<p><strong>Traitement :</strong> suivi cardiologique.</p>
+<p><strong>Médicaments :</strong> selon examens vétérinaires.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>115. Diarrhée chronique féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> selles molles persistantes, amaigrissement et baisse d'appétit.</p>
+<p><strong>Traitement :</strong> recherche de la cause digestive.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>116. Constipation féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> difficulté à déféquer, selles sèches et inconfort.</p>
+<p><strong>Traitement :</strong> hydratation et prise en charge de la cause.</p>
+<p><strong>Médicaments :</strong> laxatif vétérinaire si indiqué.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>117. Stomatite féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> inflammation de la bouche, douleur, mauvaise haleine et difficulté à manger.</p>
+<p><strong>Traitement :</strong> soins bucco-dentaires et recherche de la cause.</p>
+<p><strong>Médicaments :</strong> selon examen vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>118. Dermatophytose féline généralisée</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> lésions cutanées, perte de poils et squames.</p>
+<p><strong>Traitement :</strong> traitement antifongique et désinfection de l'environnement.</p>
+<p><strong>Médicaments :</strong> antifongique selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon le traitement prescrit.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>119. Acné du menton féline</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> points noirs, croûtes et inflammation du menton.</p>
+<p><strong>Traitement :</strong> hygiène locale et recherche des facteurs favorisants.</p>
+<p><strong>Médicaments :</strong> traitement local selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+<h2>120. Syndrome vestibulaire félin</h2>
+<p><strong>Animal :</strong> Chat</p>
+<p><strong>Symptômes :</strong> perte d'équilibre, tête inclinée et mouvements anormaux des yeux.</p>
+<p><strong>Traitement :</strong> recherche de la cause et surveillance vétérinaire.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+
+<div class="maladie" data-categorie="bovins">
+<h2>121. Salmonellose bovine</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> fièvre, diarrhée, déshydratation et baisse d'appétit.</p>
+<p><strong>Traitement :</strong> réhydratation et prise en charge vétérinaire.</p>
+<p><strong>Médicaments :</strong> selon diagnostic et prescription.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>122. Listériose bovine</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> troubles neurologiques, difficulté à manger et parfois avortement.</p>
+<p><strong>Traitement :</strong> intervention vétérinaire rapide.</p>
+<p><strong>Médicaments :</strong> antimicrobien selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>123. Paratuberculose bovine</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> amaigrissement progressif et diarrhée chronique.</p>
+<p><strong>Traitement :</strong> contrôle sanitaire et gestion du troupeau.</p>
+<p><strong>Médicaments :</strong> pas d'automédication.</p>
+<p><strong>Mode d'administration :</strong> selon les recommandations vétérinaires.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>124. Leucose bovine enzootique</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> souvent absents ; certains animaux présentent une faiblesse ou des troubles généraux.</p>
+<p><strong>Traitement :</strong> dépistage et contrôle sanitaire.</p>
+<p><strong>Médicaments :</strong> pas de traitement curatif spécifique courant.</p>
+<p><strong>Mode d'administration :</strong> mesures sanitaires.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>125. Rhinotrachéite infectieuse bovine</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> fièvre, écoulement nasal, toux et difficultés respiratoires.</p>
+<p><strong>Traitement :</strong> soins de soutien et contrôle des complications.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>126. Diarrhée virale bovine</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> diarrhée, fièvre, baisse d'appétit et troubles de reproduction.</p>
+<p><strong>Traitement :</strong> soins de soutien et prévention sanitaire.</p>
+<p><strong>Médicaments :</strong> selon les complications.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>127. Pneumonie enzootique du veau</h2>
+<p><strong>Animal :</strong> Veau</p>
+<p><strong>Symptômes :</strong> toux, fièvre, écoulement nasal et respiration difficile.</p>
+<p><strong>Traitement :</strong> amélioration de l'ambiance et soins vétérinaires.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>128. Omphalite du veau</h2>
+<p><strong>Animal :</strong> Veau</p>
+<p><strong>Symptômes :</strong> inflammation de l'ombilic, douleur, fièvre et faiblesse.</p>
+<p><strong>Traitement :</strong> soins de l'ombilic et traitement de l'infection si nécessaire.</p>
+<p><strong>Médicaments :</strong> selon prescription vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon protocole.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>129. Cryptosporidiose du veau</h2>
+<p><strong>Animal :</strong> Veau</p>
+<p><strong>Symptômes :</strong> diarrhée, déshydratation et faiblesse.</p>
+<p><strong>Traitement :</strong> réhydratation et hygiène rigoureuse.</p>
+<p><strong>Médicaments :</strong> selon diagnostic vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+<h2>130. Coccidiose bovine</h2>
+<p><strong>Animal :</strong> Bovin</p>
+<p><strong>Symptômes :</strong> diarrhée, amaigrissement et baisse de croissance.</p>
+<p><strong>Traitement :</strong> anticoccidien adapté et gestion de l'hygiène.</p>
+<p><strong>Médicaments :</strong> selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon le produit.</p>
+</div>
+
+
+<div class="maladie" data-categorie="volailles">
+<h2>131. Mycoplasmose aviaire</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> toux, éternuements, écoulements et baisse des performances.</p>
+<p><strong>Traitement :</strong> amélioration de l'environnement et prise en charge vétérinaire.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>132. Encéphalomyélite aviaire infectieuse</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> tremblements, faiblesse et troubles de coordination chez les jeunes.</p>
+<p><strong>Traitement :</strong> prévention et gestion sanitaire.</p>
+<p><strong>Médicaments :</strong> selon avis vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>133. Hépatite à inclusions des poulets</h2>
+<p><strong>Animal :</strong> Poulet</p>
+<p><strong>Symptômes :</strong> abattement, mortalité et baisse des performances.</p>
+<p><strong>Traitement :</strong> soins de soutien et contrôle des facteurs favorisants.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>134. Syndrome de chute de ponte</h2>
+<p><strong>Animal :</strong> Poule pondeuse</p>
+<p><strong>Symptômes :</strong> diminution de la production et coquilles anormales.</p>
+<p><strong>Traitement :</strong> gestion de l'élevage et prévention.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon recommandations vétérinaires.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>135. Syndrome de malabsorption aviaire</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> retard de croissance, diarrhée et mauvaise utilisation des aliments.</p>
+<p><strong>Traitement :</strong> correction de l'alimentation et recherche de la cause.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>136. Pododermatite aviaire</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> lésions et inflammation sous les pattes.</p>
+<p><strong>Traitement :</strong> amélioration de la litière et soins locaux.</p>
+<p><strong>Médicaments :</strong> selon le cas.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>137. Cannibalisme aviaire</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> blessures et comportements agressifs dans le troupeau.</p>
+<p><strong>Traitement :</strong> correction de la densité, alimentation, lumière et environnement.</p>
+<p><strong>Médicaments :</strong> généralement pas de médicament spécifique.</p>
+<p><strong>Mode d'administration :</strong> mesures d'élevage.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>138. Carence en vitamine D chez la volaille</h2>
+<p><strong>Animal :</strong> Volaille</p>
+<p><strong>Symptômes :</strong> faiblesse osseuse, mauvaise croissance et problèmes locomoteurs.</p>
+<p><strong>Traitement :</strong> correction de l'alimentation.</p>
+<p><strong>Médicaments :</strong> supplémentation selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon le complément utilisé.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>139. Carence en calcium chez la poule</h2>
+<p><strong>Animal :</strong> Poule</p>
+<p><strong>Symptômes :</strong> coquilles fragiles, baisse de production et troubles osseux.</p>
+<p><strong>Traitement :</strong> correction de la ration.</p>
+<p><strong>Médicaments :</strong> supplément minéral selon recommandation vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+<h2>140. Pododermatite des poulets de chair</h2>
+<p><strong>Animal :</strong> Poulet de chair</p>
+<p><strong>Symptômes :</strong> lésions sous les pieds et difficultés de déplacement.</p>
+<p><strong>Traitement :</strong> amélioration de la litière et de la gestion de l'élevage.</p>
+<p><strong>Médicaments :</strong> selon le cas.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+
+<div class="maladie" data-categorie="petits-ruminants">
+<h2>141. Toxémie de gestation de la brebis</h2>
+<p><strong>Animal :</strong> Brebis</p>
+<p><strong>Symptômes :</strong> baisse d'appétit, faiblesse et troubles métaboliques en fin de gestation.</p>
+<p><strong>Traitement :</strong> correction énergétique et intervention vétérinaire.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+<h2>142. Hypocalcémie de la brebis</h2>
+<p><strong>Animal :</strong> Brebis</p>
+<p><strong>Symptômes :</strong> faiblesse, tremblements et difficulté à se déplacer.</p>
+<p><strong>Traitement :</strong> correction du déséquilibre minéral.</p>
+<p><strong>Médicaments :</strong> supplémentation selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon l'état de l'animal.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+<h2>143. Pneumonie ovine</h2>
+<p><strong>Animal :</strong> Mouton</p>
+<p><strong>Symptômes :</strong> toux, fièvre, écoulement nasal et difficulté respiratoire.</p>
+<p><strong>Traitement :</strong> soins vétérinaires et amélioration de l'environnement.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+<h2>144. Gale sarcoptique ovine</h2>
+<p><strong>Animal :</strong> Mouton</p>
+<p><strong>Symptômes :</strong> démangeaisons, croûtes et perte de laine.</p>
+<p><strong>Traitement :</strong> traitement acaricide et gestion de l'environnement.</p>
+<p><strong>Médicaments :</strong> selon prescription.</p>
+<p><strong>Mode d'administration :</strong> selon le produit.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+<h2>145. Fasciolose des petits ruminants</h2>
+<p><strong>Animal :</strong> Mouton et chèvre</p>
+<p><strong>Symptômes :</strong> amaigrissement, faiblesse et anémie.</p>
+<p><strong>Traitement :</strong> antiparasitaire adapté et gestion des pâturages.</p>
+<p><strong>Médicaments :</strong> antiparasitaire selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+
+<div class="maladie" data-categorie="porcs">
+<h2>146. Gastrite du porc</h2>
+<p><strong>Animal :</strong> Porc</p>
+<p><strong>Symptômes :</strong> baisse d'appétit, troubles digestifs et perte de performances.</p>
+<p><strong>Traitement :</strong> correction de l'alimentation et recherche de la cause.</p>
+<p><strong>Médicaments :</strong> selon diagnostic vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+<h2>147. Ulcère gastrique porcin</h2>
+<p><strong>Animal :</strong> Porc</p>
+<p><strong>Symptômes :</strong> baisse d'appétit, pâleur et faiblesse possibles.</p>
+<p><strong>Traitement :</strong> correction de la ration et gestion de l'élevage.</p>
+<p><strong>Médicaments :</strong> selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+<h2>148. Méningite streptococcique porcine</h2>
+<p><strong>Animal :</strong> Porc</p>
+<p><strong>Symptômes :</strong> fièvre, troubles nerveux et difficultés à se déplacer.</p>
+<p><strong>Traitement :</strong> intervention vétérinaire rapide.</p>
+<p><strong>Médicaments :</strong> antimicrobien selon diagnostic.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+<h2>149. Arthrite infectieuse porcine</h2>
+<p><strong>Animal :</strong> Porc</p>
+<p><strong>Symptômes :</strong> boiterie, articulations douloureuses et difficulté à marcher.</p>
+<p><strong>Traitement :</strong> diagnostic et traitement de l'infection.</p>
+<p><strong>Médicaments :</strong> selon prescription vétérinaire.</p>
+<p><strong>Mode d'administration :</strong> selon prescription.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+<h2>150. Hernie ombilicale porcine</h2>
+<p><strong>Animal :</strong> Porc</p>
+<p><strong>Symptômes :</strong> masse au niveau de l'ombilic, parfois douloureuse.</p>
+<p><strong>Traitement :</strong> examen vétérinaire et gestion selon la gravité.</p>
+<p><strong>Médicaments :</strong> pas de médicament spécifique dans la majorité des cas.</p>
+<p><strong>Mode d'administration :</strong> prise en charge vétérinaire si nécessaire.</p>
+</div>
+  <!-- 151 à 200 -->
+
+<div class="maladie" data-categorie="equides">
+  <h3>151. Grippe équine</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Fièvre, toux, écoulement nasal, fatigue et baisse d'appétit.</p>
+  <p><strong>Traitement :</strong> Repos, soins de soutien et surveillance vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon le diagnostic et la prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="equides">
+  <h3>152. Rhinopneumonie équine</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Fièvre, écoulement nasal, toux et troubles respiratoires.</p>
+  <p><strong>Traitement :</strong> Isolement, repos et soins de soutien.</p>
+  <p><strong>Médicament :</strong> Selon le diagnostic et la prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="equides">
+  <h3>153. Tétanos équin</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Raideur musculaire, difficultés à se déplacer et hypersensibilité.</p>
+  <p><strong>Traitement :</strong> Soins vétérinaires urgents et traitement de soutien.</p>
+  <p><strong>Médicament :</strong> Antitoxine et autres traitements selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="equides">
+  <h3>154. Anémie infectieuse équine</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Fièvre récurrente, faiblesse, amaigrissement et anémie.</p>
+  <p><strong>Traitement :</strong> Prise en charge vétérinaire et mesures sanitaires.</p>
+  <p><strong>Médicament :</strong> Il n'existe pas de traitement curatif spécifique.</p>
+  <p><strong>Mode d'administration :</strong> Suivi vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="equides">
+  <h3>155. Gourme du cheval</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Fièvre, écoulement nasal et gonflement des ganglions.</p>
+  <p><strong>Traitement :</strong> Isolement et soins adaptés sous contrôle vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon le diagnostic et la prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="equides">
+  <h3>156. Encéphalite équine</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Fièvre, troubles de l'équilibre, faiblesse et signes neurologiques.</p>
+  <p><strong>Traitement :</strong> Soins de soutien et surveillance vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon le diagnostic et la prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="equides">
+  <h3>157. Ostéochondrose équine</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Boiterie, douleur articulaire et difficultés locomotrices.</p>
+  <p><strong>Traitement :</strong> Repos, gestion de l'exercice et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="equides">
+  <h3>158. Abcès du pied chez le cheval</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Boiterie soudaine, douleur du pied et difficulté à marcher.</p>
+  <p><strong>Traitement :</strong> Examen du pied et soins locaux adaptés.</p>
+  <p><strong>Médicament :</strong> Selon le diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="equides">
+  <h3>159. Dermatite estivale récidivante équine</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Démangeaisons, lésions cutanées et perte de poils.</p>
+  <p><strong>Traitement :</strong> Protection contre les insectes et soins dermatologiques.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="equides">
+  <h3>160. Strangles métastatiques du cheval</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Fièvre, ganglions augmentés et signes généraux.</p>
+  <p><strong>Traitement :</strong> Prise en charge vétérinaire et soins adaptés.</p>
+  <p><strong>Médicament :</strong> Selon le diagnostic et la prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="lapins">
+  <h3>161. Pasteurellose du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Éternuements, écoulement nasal, difficultés respiratoires et fatigue.</p>
+  <p><strong>Traitement :</strong> Soins vétérinaires et amélioration des conditions d'élevage.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="lapins">
+  <h3>162. Pododermatite du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Lésions et inflammation au niveau des pattes.</p>
+  <p><strong>Traitement :</strong> Soins des pieds et amélioration du logement.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="lapins">
+  <h3>163. Entérite mucoïde du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Diarrhée, constipation, mucus dans les selles et baisse d'appétit.</p>
+  <p><strong>Traitement :</strong> Réhydratation et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon le diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="lapins">
+  <h3>164. Encéphalitozoonose du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Troubles de l'équilibre, faiblesse et signes neurologiques.</p>
+  <p><strong>Traitement :</strong> Prise en charge vétérinaire et soins de soutien.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="lapins">
+  <h3>165. Malocclusion dentaire du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Difficulté à manger, salivation et perte de poids.</p>
+  <p><strong>Traitement :</strong> Correction dentaire et alimentation adaptée sous contrôle vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="lapins">
+  <h3>166. Otite moyenne du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Douleur, troubles de l'équilibre et écoulement auriculaire.</p>
+  <p><strong>Traitement :</strong> Examen vétérinaire et traitement adapté.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="lapins">
+  <h3>167. Abcès dentaire du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Gonflement de la face, douleur et difficulté à manger.</p>
+  <p><strong>Traitement :</strong> Prise en charge dentaire et vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="lapins">
+  <h3>168. Stase gastro-intestinale du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Diminution de l'appétit, absence de selles et abdomen douloureux.</p>
+  <p><strong>Traitement :</strong> Consultation vétérinaire rapide et soins de soutien.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="lapins">
+  <h3>169. Pneumonie du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Respiration difficile, écoulement nasal, toux et fatigue.</p>
+  <p><strong>Traitement :</strong> Soins respiratoires et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="lapins">
+  <h3>170. Gale auriculaire du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Démangeaisons, croûtes et inflammation des oreilles.</p>
+  <p><strong>Traitement :</strong> Traitement antiparasitaire adapté sous contrôle vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="poissons">
+  <h3>171. Columnariose des poissons</h3>
+  <p><strong>Animal :</strong> Poissons</p>
+  <p><strong>Symptômes :</strong> Lésions cutanées, dépôts blanchâtres et faiblesse.</p>
+  <p><strong>Traitement :</strong> Amélioration de la qualité de l'eau et prise en charge adaptée.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="poissons">
+  <h3>172. Saprolegniose des poissons</h3>
+  <p><strong>Animal :</strong> Poissons</p>
+  <p><strong>Symptômes :</strong> Développement de masses ressemblant à du coton sur la peau ou les œufs.</p>
+  <p><strong>Traitement :</strong> Correction des conditions d'élevage et soins adaptés.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et réglementation vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="poissons">
+  <h3>173. Maladie des points blancs</h3>
+  <p><strong>Animal :</strong> Poissons</p>
+  <p><strong>Symptômes :</strong> Petits points blancs sur le corps et les nageoires, frottements et faiblesse.</p>
+  <p><strong>Traitement :</strong> Gestion de l'eau et traitement adapté selon l'espèce.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="poissons">
+  <h3>174. Aeromonose des poissons</h3>
+  <p><strong>Animal :</strong> Poissons</p>
+  <p><strong>Symptômes :</strong> Ulcères cutanés, hémorragies, faiblesse et mortalité.</p>
+  <p><strong>Traitement :</strong> Amélioration de la qualité de l'eau et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="poissons">
+  <h3>175. Maladie des reins polykystiques des poissons</h3>
+  <p><strong>Animal :</strong> Poissons</p>
+  <p><strong>Symptômes :</strong> Abdomen augmenté de volume, faiblesse et troubles de croissance.</p>
+  <p><strong>Traitement :</strong> Gestion sanitaire et amélioration des conditions d'élevage.</p>
+  <p><strong>Médicament :</strong> Aucun traitement spécifique universel.</p>
+  <p><strong>Mode d'administration :</strong> Suivi vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="poissons">
+  <h3>176. Pourriture des nageoires</h3>
+  <p><strong>Animal :</strong> Poissons</p>
+  <p><strong>Symptômes :</strong> Dégradation des nageoires, inflammation et faiblesse.</p>
+  <p><strong>Traitement :</strong> Amélioration de la qualité de l'eau et traitement adapté.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="poissons">
+  <h3>177. Lymphocystose des poissons</h3>
+  <p><strong>Animal :</strong> Poissons</p>
+  <p><strong>Symptômes :</strong> Petites masses ou nodules sur la peau et les nageoires.</p>
+  <p><strong>Traitement :</strong> Isolement et amélioration des conditions d'élevage.</p>
+  <p><strong>Médicament :</strong> Pas de traitement spécifique universel.</p>
+  <p><strong>Mode d'administration :</strong> Suivi vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="poissons">
+  <h3>178. Infection à Vibrio chez les poissons</h3>
+  <p><strong>Animal :</strong> Poissons</p>
+  <p><strong>Symptômes :</strong> Lésions, ulcères, hémorragies et perte d'appétit.</p>
+  <p><strong>Traitement :</strong> Diagnostic vétérinaire et mesures sanitaires.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="poissons">
+  <h3>179. Infestation par les vers branchiaux</h3>
+  <p><strong>Animal :</strong> Poissons</p>
+  <p><strong>Symptômes :</strong> Respiration rapide, irritation des branchies et baisse d'activité.</p>
+  <p><strong>Traitement :</strong> Traitement antiparasitaire adapté à l'espèce.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="poissons">
+  <h3>180. Septicémie hémorragique virale</h3>
+  <p><strong>Animal :</strong> Poissons</p>
+  <p><strong>Symptômes :</strong> Faiblesse, hémorragies, troubles de nage et mortalité.</p>
+  <p><strong>Traitement :</strong> Mesures sanitaires et gestion de l'élevage.</p>
+  <p><strong>Médicament :</strong> Pas de traitement antiviral spécifique universel.</p>
+  <p><strong>Mode d'administration :</strong> Suivi vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>181. Varroose de l'abeille</h3>
+  <p><strong>Animal :</strong> Abeilles</p>
+  <p><strong>Symptômes :</strong> Affaiblissement de la colonie, abeilles malformées et baisse de production.</p>
+  <p><strong>Traitement :</strong> Lutte intégrée contre le parasite et surveillance de la colonie.</p>
+  <p><strong>Médicament :</strong> Produit vétérinaire autorisé selon prescription et réglementation.</p>
+  <p><strong>Mode d'administration :</strong> Selon les instructions du produit vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>182. Loque américaine des abeilles</h3>
+  <p><strong>Animal :</strong> Abeilles</p>
+  <p><strong>Symptômes :</strong> Mortalité des larves et affaiblissement de la colonie.</p>
+  <p><strong>Traitement :</strong> Mesures sanitaires et contrôle vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon la réglementation vétérinaire locale.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>183. Loque européenne des abeilles</h3>
+  <p><strong>Animal :</strong> Abeilles</p>
+  <p><strong>Symptômes :</strong> Mortalité des larves et développement irrégulier du couvain.</p>
+  <p><strong>Traitement :</strong> Mesures d'hygiène et gestion sanitaire de la ruche.</p>
+  <p><strong>Médicament :</strong> Selon réglementation et avis vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>184. Nosemose des abeilles</h3>
+  <p><strong>Animal :</strong> Abeilles</p>
+  <p><strong>Symptômes :</strong> Affaiblissement de la colonie, troubles digestifs et baisse d'activité.</p>
+  <p><strong>Traitement :</strong> Amélioration des conditions sanitaires et suivi de la colonie.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire et réglementation.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>185. Acariose des abeilles</h3>
+  <p><strong>Animal :</strong> Abeilles</p>
+  <p><strong>Symptômes :</strong> Faiblesse, troubles respiratoires et diminution de l'activité.</p>
+  <p><strong>Traitement :</strong> Mesures de lutte antiparasitaire adaptées.</p>
+  <p><strong>Médicament :</strong> Selon prescription et réglementation vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon les instructions du produit.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>186. Maladie respiratoire chronique de l'âne</h3>
+  <p><strong>Animal :</strong> Âne</p>
+  <p><strong>Symptômes :</strong> Toux, écoulement nasal et difficultés respiratoires.</p>
+  <p><strong>Traitement :</strong> Diagnostic vétérinaire et amélioration de l'environnement.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>187. Trypanosomose de l'âne</h3>
+  <p><strong>Animal :</strong> Âne</p>
+  <p><strong>Symptômes :</strong> Fièvre, anémie, amaigrissement et faiblesse.</p>
+  <p><strong>Traitement :</strong> Diagnostic et traitement vétérinaire adaptés.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>188. Dermatite parasitaire de l'âne</h3>
+  <p><strong>Animal :</strong> Âne</p>
+  <p><strong>Symptômes :</strong> Démangeaisons, lésions cutanées et perte de poils.</p>
+  <p><strong>Traitement :</strong> Identification du parasite et traitement adapté.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>189. Fièvre catarrhale de la chèvre</h3>
+  <p><strong>Animal :</strong> Chèvre</p>
+  <p><strong>Symptômes :</strong> Fièvre, écoulement nasal, lésions buccales et faiblesse.</p>
+  <p><strong>Traitement :</strong> Soins de soutien et mesures sanitaires.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>190. Lymphadénite caséeuse</h3>
+  <p><strong>Animal :</strong> Chèvres et moutons</p>
+  <p><strong>Symptômes :</strong> Gonflement des ganglions et abcès sous-cutanés.</p>
+  <p><strong>Traitement :</strong> Gestion sanitaire et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>191. Fièvre charbonneuse du buffle</h3>
+  <p><strong>Animal :</strong> Buffle</p>
+  <p><strong>Symptômes :</strong> Fièvre, faiblesse et maladie aiguë.</p>
+  <p><strong>Traitement :</strong> Urgence vétérinaire et mesures sanitaires strictes.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>192. Fasciolose du buffle</h3>
+  <p><strong>Animal :</strong> Buffle</p>
+  <p><strong>Symptômes :</strong> Amaigrissement, faiblesse, anémie et baisse de production.</p>
+  <p><strong>Traitement :</strong> Lutte contre les parasites et gestion sanitaire.</p>
+  <p><strong>Médicament :</strong> Antiparasitaire selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>193. Trypanosomose du buffle</h3>
+  <p><strong>Animal :</strong> Buffle</p>
+  <p><strong>Symptômes :</strong> Fièvre, anémie, amaigrissement et faiblesse.</p>
+  <p><strong>Traitement :</strong> Diagnostic et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+  <h3>194. Hépatite virale du canard</h3>
+  <p><strong>Animal :</strong> Canard</p>
+  <p><strong>Symptômes :</strong> Faiblesse, troubles nerveux et mortalité chez les jeunes.</p>
+  <p><strong>Traitement :</strong> Mesures sanitaires et prévention adaptée.</p>
+  <p><strong>Médicament :</strong> Pas de traitement antiviral spécifique universel.</p>
+  <p><strong>Mode d'administration :</strong> Soins de soutien selon avis vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+  <h3>195. Entérite virale du canard</h3>
+  <p><strong>Animal :</strong> Canard</p>
+  <p><strong>Symptômes :</strong> Abattement, diarrhée, baisse d'appétit et mortalité.</p>
+  <p><strong>Traitement :</strong> Isolement, hygiène et soins de soutien.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+  <h3>196. Sinusite du canard</h3>
+  <p><strong>Animal :</strong> Canard</p>
+  <p><strong>Symptômes :</strong> Gonflement de la face, écoulement nasal et difficultés respiratoires.</p>
+  <p><strong>Traitement :</strong> Amélioration de l'environnement et soins vétérinaires.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+  <h3>197. Coryza de la dinde</h3>
+  <p><strong>Animal :</strong> Dinde</p>
+  <p><strong>Symptômes :</strong> Éternuements, écoulement nasal, gonflement de la face et baisse d'activité.</p>
+  <p><strong>Traitement :</strong> Isolement et amélioration des conditions d'élevage.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+  <h3>198. Entérite hémorragique de la dinde</h3>
+  <p><strong>Animal :</strong> Dinde</p>
+  <p><strong>Symptômes :</strong> Abattement, diarrhée et baisse de consommation alimentaire.</p>
+  <p><strong>Traitement :</strong> Mesures sanitaires et soins de soutien.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>199. Dermatite bactérienne du cobaye</h3>
+  <p><strong>Animal :</strong> Cobaye</p>
+  <p><strong>Symptômes :</strong> Rougeur, croûtes, perte de poils et démangeaisons.</p>
+  <p><strong>Traitement :</strong> Examen vétérinaire et soins dermatologiques adaptés.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="autres">
+  <h3>200. Teigne du cobaye</h3>
+  <p><strong>Animal :</strong> Cobaye</p>
+  <p><strong>Symptômes :</strong> Plaques sans poils, croûtes et démangeaisons.</p>
+  <p><strong>Traitement :</strong> Traitement antifongique et hygiène de l'environnement.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+  <!-- 201 à 250 -->
+
+<div class="maladie" data-categorie="chiens">
+  <h3>201. Hépatopathie chronique du chien</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Fatigue, perte d'appétit, amaigrissement et troubles digestifs.</p>
+  <p><strong>Traitement :</strong> Adapté à la cause après diagnostic vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>202. Gastrite chronique du chien</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Vomissements répétés, nausées et diminution de l'appétit.</p>
+  <p><strong>Traitement :</strong> Régime adapté et prise en charge de la cause.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>203. Colite canine</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Diarrhée, selles fréquentes, mucus et douleurs abdominales.</p>
+  <p><strong>Traitement :</strong> Réhydratation et traitement de la cause identifiée.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>204. Prostatite canine</h3>
+  <p><strong>Animal :</strong> Chien mâle</p>
+  <p><strong>Symptômes :</strong> Difficultés urinaires, fièvre, douleur et écoulement génital.</p>
+  <p><strong>Traitement :</strong> Diagnostic vétérinaire et traitement adapté.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>205. Cystite canine</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Urinations fréquentes, douleur et parfois sang dans les urines.</p>
+  <p><strong>Traitement :</strong> Identification de la cause et soins adaptés.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>206. Urétrite canine</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Difficulté à uriner, douleur et irritation des voies urinaires.</p>
+  <p><strong>Traitement :</strong> Diagnostic et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>207. Hypoadrénocorticisme canin</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Faiblesse, vomissements, diarrhée et baisse d'appétit.</p>
+  <p><strong>Traitement :</strong> Traitement hormonal et suivi vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>208. Hyperparathyroïdie canine</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Faiblesse, troubles osseux et modifications de la soif et des urines.</p>
+  <p><strong>Traitement :</strong> Recherche de la cause et correction des déséquilibres.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>209. Mégaœsophage du chien</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Régurgitations, difficultés à avaler et amaigrissement.</p>
+  <p><strong>Traitement :</strong> Gestion alimentaire et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>210. Hernie discale canine</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Douleur dorsale, faiblesse et troubles de la locomotion.</p>
+  <p><strong>Traitement :</strong> Repos, traitement médical ou chirurgie selon la gravité.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+
+<div class="maladie" data-categorie="chats">
+  <h3>211. Cholangite féline</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Perte d'appétit, vomissements, fatigue et parfois jaunisse.</p>
+  <p><strong>Traitement :</strong> Traitement adapté à la cause identifiée.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>212. Cholangiohépatite féline</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Fièvre, vomissements, perte d'appétit et jaunisse.</p>
+  <p><strong>Traitement :</strong> Soins de soutien et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>213. Lipidose hépatique secondaire du chat</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Perte d'appétit, amaigrissement, faiblesse et jaunisse.</p>
+  <p><strong>Traitement :</strong> Soutien nutritionnel et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>214. Urétrite féline</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Difficultés à uriner, douleur et urinations fréquentes.</p>
+  <p><strong>Traitement :</strong> Examen vétérinaire et prise en charge urinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>215. Obstruction urétrale féline</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Difficulté ou impossibilité d'uriner, douleur et agitation.</p>
+  <p><strong>Traitement :</strong> Urgence vétérinaire avec prise en charge des voies urinaires.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>216. Maladie inflammatoire intestinale féline</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Vomissements, diarrhée, amaigrissement et perte d'appétit.</p>
+  <p><strong>Traitement :</strong> Régime adapté et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>217. Mégacôlon félin</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Constipation importante, efforts pour déféquer et abdomen distendu.</p>
+  <p><strong>Traitement :</strong> Gestion vétérinaire adaptée à la cause.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>218. Maladie du foie gras félin</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Anorexie, amaigrissement, faiblesse et jaunisse.</p>
+  <p><strong>Traitement :</strong> Soutien nutritionnel et traitement de la cause sous contrôle vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>219. Syndrome de rétrocornée féline</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Modification de l'œil, douleur et troubles visuels possibles.</p>
+  <p><strong>Traitement :</strong> Examen ophtalmologique vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>220. Ulcère cornéen félin</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Œil fermé, douleur, larmoiement et rougeur.</p>
+  <p><strong>Traitement :</strong> Examen vétérinaire et soins oculaires adaptés.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+
+<div class="maladie" data-categorie="bovins">
+  <h3>221. Salmonellose néonatale du veau</h3>
+  <p><strong>Animal :</strong> Bovin</p>
+  <p><strong>Symptômes :</strong> Diarrhée, fièvre, faiblesse et déshydratation.</p>
+  <p><strong>Traitement :</strong> Réhydratation et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>222. Pneumonie par aspiration du veau</h3>
+  <p><strong>Animal :</strong> Bovin</p>
+  <p><strong>Symptômes :</strong> Toux, respiration difficile, fièvre et baisse d'appétit.</p>
+  <p><strong>Traitement :</strong> Soins respiratoires et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>223. Kératoconjonctivite infectieuse bovine</h3>
+  <p><strong>Animal :</strong> Bovin</p>
+  <p><strong>Symptômes :</strong> Larmoiement, rougeur, douleur et opacité de la cornée.</p>
+  <p><strong>Traitement :</strong> Soins oculaires et traitement adapté.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>224. Pancréatite bovine</h3>
+  <p><strong>Animal :</strong> Bovin</p>
+  <p><strong>Symptômes :</strong> Baisse d'appétit, douleur abdominale et troubles digestifs.</p>
+  <p><strong>Traitement :</strong> Soins de soutien et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>225. Péritonite bovine</h3>
+  <p><strong>Animal :</strong> Bovin</p>
+  <p><strong>Symptômes :</strong> Douleur abdominale, fièvre, abattement et baisse d'appétit.</p>
+  <p><strong>Traitement :</strong> Évaluation vétérinaire rapide et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>226. Endométrite bovine</h3>
+  <p><strong>Animal :</strong> Vache</p>
+  <p><strong>Symptômes :</strong> Écoulement utérin anormal et troubles de la reproduction.</p>
+  <p><strong>Traitement :</strong> Examen de l'appareil reproducteur et traitement adapté.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>227. Vaginite bovine</h3>
+  <p><strong>Animal :</strong> Vache</p>
+  <p><strong>Symptômes :</strong> Écoulement vulvaire, irritation et inflammation.</p>
+  <p><strong>Traitement :</strong> Diagnostic de la cause et soins adaptés.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>228. Prolapsus vaginal bovin</h3>
+  <p><strong>Animal :</strong> Vache</p>
+  <p><strong>Symptômes :</strong> Présence d'une masse de tissu au niveau de la vulve.</p>
+  <p><strong>Traitement :</strong> Intervention vétérinaire et prévention des complications.</p>
+  <p><strong>Médicament :</strong> Selon les soins nécessaires.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>229. Kyste ovarien bovin</h3>
+  <p><strong>Animal :</strong> Vache</p>
+  <p><strong>Symptômes :</strong> Absence ou irrégularité des chaleurs et infertilité.</p>
+  <p><strong>Traitement :</strong> Diagnostic reproductif et traitement hormonal adapté.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>230. Dystocie bovine</h3>
+  <p><strong>Animal :</strong> Vache</p>
+  <p><strong>Symptômes :</strong> Difficulté ou retard important lors de la mise bas.</p>
+  <p><strong>Traitement :</strong> Assistance vétérinaire pour la mise bas.</p>
+  <p><strong>Médicament :</strong> Selon la situation clinique.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+
+<div class="maladie" data-categorie="petits-ruminants">
+  <h3>231. Agalactie contagieuse de la chèvre</h3>
+  <p><strong>Animal :</strong> Chèvre</p>
+  <p><strong>Symptômes :</strong> Baisse de production de lait, mammite, arthrite et parfois conjonctivite.</p>
+  <p><strong>Traitement :</strong> Isolement et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+  <h3>232. Avortement enzootique de la brebis</h3>
+  <p><strong>Animal :</strong> Brebis</p>
+  <p><strong>Symptômes :</strong> Avortements, naissance d'agneaux faibles et troubles de la reproduction.</p>
+  <p><strong>Traitement :</strong> Diagnostic vétérinaire et mesures sanitaires.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et réglementation vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+  <h3>233. Conjonctivite ovine</h3>
+  <p><strong>Animal :</strong> Mouton</p>
+  <p><strong>Symptômes :</strong> Larmoiement, rougeur et irritation des yeux.</p>
+  <p><strong>Traitement :</strong> Soins oculaires et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+  <h3>234. Kératite ovine</h3>
+  <p><strong>Animal :</strong> Mouton</p>
+  <p><strong>Symptômes :</strong> Douleur oculaire, rougeur, larmoiement et sensibilité à la lumière.</p>
+  <p><strong>Traitement :</strong> Examen vétérinaire et soins oculaires adaptés.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+  <h3>235. Acidose ruminale de la chèvre</h3>
+  <p><strong>Animal :</strong> Chèvre</p>
+  <p><strong>Symptômes :</strong> Baisse d'appétit, diarrhée, faiblesse et troubles digestifs.</p>
+  <p><strong>Traitement :</strong> Correction alimentaire et soins vétérinaires.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+  <h3>236. Ballonnement ruminal de la chèvre</h3>
+  <p><strong>Animal :</strong> Chèvre</p>
+  <p><strong>Symptômes :</strong> Distension abdominale, gêne respiratoire et agitation.</p>
+  <p><strong>Traitement :</strong> Intervention vétérinaire rapide.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+  <h3>237. Anémie parasitaire ovine</h3>
+  <p><strong>Animal :</strong> Mouton</p>
+  <p><strong>Symptômes :</strong> Pâleur, faiblesse, amaigrissement et baisse de production.</p>
+  <p><strong>Traitement :</strong> Identification du parasite et gestion du troupeau.</p>
+  <p><strong>Médicament :</strong> Antiparasitaire selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+  <h3>238. Entérite néonatale de l'agneau</h3>
+  <p><strong>Animal :</strong> Agneau</p>
+  <p><strong>Symptômes :</strong> Diarrhée, faiblesse, déshydratation et retard de croissance.</p>
+  <p><strong>Traitement :</strong> Réhydratation et recherche de la cause.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+  <h3>239. Arthrite néonatale de l'agneau</h3>
+  <p><strong>Animal :</strong> Agneau</p>
+  <p><strong>Symptômes :</strong> Gonflement des articulations, douleur et difficulté à marcher.</p>
+  <p><strong>Traitement :</strong> Soins vétérinaires et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="petits-ruminants">
+  <h3>240. Omphalite de l'agneau</h3>
+  <p><strong>Animal :</strong> Agneau</p>
+  <p><strong>Symptômes :</strong> Infection et gonflement de l'ombilic, fièvre et faiblesse.</p>
+  <p><strong>Traitement :</strong> Soins de l'ombilic et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+
+<div class="maladie" data-categorie="porcs">
+  <h3>241. Gastrite chronique porcine</h3>
+  <p><strong>Animal :</strong> Porc</p>
+  <p><strong>Symptômes :</strong> Baisse d'appétit, vomissements occasionnels et retard de croissance.</p>
+  <p><strong>Traitement :</strong> Correction alimentaire et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+  <h3>242. Gastrite ulcéreuse du porcelet</h3>
+  <p><strong>Animal :</strong> Porc</p>
+  <p><strong>Symptômes :</strong> Pâleur, faiblesse, baisse d'appétit et retard de croissance.</p>
+  <p><strong>Traitement :</strong> Correction de l'alimentation et gestion sanitaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+  <h3>243. Entérite nécrotique du porc</h3>
+  <p><strong>Animal :</strong> Porc</p>
+  <p><strong>Symptômes :</strong> Diarrhée, abattement, perte d'appétit et retard de croissance.</p>
+  <p><strong>Traitement :</strong> Diagnostic et prise en charge sanitaire.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+  <h3>244. Entérocolite proliférative porcine</h3>
+  <p><strong>Animal :</strong> Porc</p>
+  <p><strong>Symptômes :</strong> Diarrhée, amaigrissement et retard de croissance.</p>
+  <p><strong>Traitement :</strong> Prise en charge vétérinaire et mesures d'hygiène.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+  <h3>245. Gastrite parasitaire du porc</h3>
+  <p><strong>Animal :</strong> Porc</p>
+  <p><strong>Symptômes :</strong> Baisse d'appétit, amaigrissement et troubles digestifs.</p>
+  <p><strong>Traitement :</strong> Contrôle parasitaire et amélioration de l'hygiène.</p>
+  <p><strong>Médicament :</strong> Antiparasitaire selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+  <h3>246. Trichurose porcine</h3>
+  <p><strong>Animal :</strong> Porc</p>
+  <p><strong>Symptômes :</strong> Diarrhée, amaigrissement et retard de croissance.</p>
+  <p><strong>Traitement :</strong> Lutte antiparasitaire et hygiène des locaux.</p>
+  <p><strong>Médicament :</strong> Antiparasitaire selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+  <h3>247. Strongyloïdose du porcelet</h3>
+  <p><strong>Animal :</strong> Porcelet</p>
+  <p><strong>Symptômes :</strong> Diarrhée, faiblesse et retard de croissance.</p>
+  <p><strong>Traitement :</strong> Gestion sanitaire et contrôle parasitaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+  <h3>248. Hernie inguinale du porc</h3>
+  <p><strong>Animal :</strong> Porc</p>
+  <p><strong>Symptômes :</strong> Gonflement de la région inguinale et gêne locomotrice possible.</p>
+  <p><strong>Traitement :</strong> Évaluation vétérinaire et intervention selon le cas.</p>
+  <p><strong>Médicament :</strong> Selon les soins nécessaires.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+  <h3>249. Éventration du porc</h3>
+  <p><strong>Animal :</strong> Porc</p>
+  <p><strong>Symptômes :</strong> Déformation ou gonflement de la paroi abdominale.</p>
+  <p><strong>Traitement :</strong> Examen vétérinaire et prise en charge adaptée.</p>
+  <p><strong>Médicament :</strong> Selon les besoins du cas.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="porcs">
+  <h3>250. Arthrite du porcelet</h3>
+  <p><strong>Animal :</strong> Porcelet</p>
+  <p><strong>Symptômes :</strong> Articulations gonflées, douleur et difficulté à se déplacer.</p>
+  <p><strong>Traitement :</strong> Diagnostic vétérinaire et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+  <!-- 251 à 300 -->
+
+<div class="maladie" data-categorie="chiens">
+  <h3>251. Bronchite chronique canine</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Toux persistante, respiration bruyante et fatigue.</p>
+  <p><strong>Traitement :</strong> Repos, gestion de l'environnement et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon le diagnostic et la prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>252. Trachéite canine</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Toux sèche, irritation de la gorge et gêne respiratoire.</p>
+  <p><strong>Traitement :</strong> Repos et traitement de la cause identifiée.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>253. Pneumothorax spontané canin</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Respiration difficile, faiblesse et intolérance à l'effort.</p>
+  <p><strong>Traitement :</strong> Urgence vétérinaire et prise en charge respiratoire.</p>
+  <p><strong>Médicament :</strong> Selon le diagnostic.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>254. Paralysie laryngée canine</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Respiration bruyante, toux et difficulté respiratoire à l'effort.</p>
+  <p><strong>Traitement :</strong> Évaluation vétérinaire et traitement adapté à la gravité.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>255. Syndrome de la queue froide du chien</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Queue tombante, douleur et difficulté à la mobiliser.</p>
+  <p><strong>Traitement :</strong> Repos et surveillance vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>256. Otite moyenne chronique canine</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Douleur auriculaire, secouement de la tête et écoulement.</p>
+  <p><strong>Traitement :</strong> Examen de l'oreille et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>257. Blépharite canine</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Paupières rouges, gonflées et irritées.</p>
+  <p><strong>Traitement :</strong> Soins oculaires et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>258. Cataracte canine</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Opacification du cristallin et diminution progressive de la vision.</p>
+  <p><strong>Traitement :</strong> Examen ophtalmologique et prise en charge selon le cas.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>259. Glaucome canin</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Douleur oculaire, rougeur et troubles de la vision.</p>
+  <p><strong>Traitement :</strong> Prise en charge ophtalmologique rapide.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chiens">
+  <h3>260. Décollement de rétine canin</h3>
+  <p><strong>Animal :</strong> Chien</p>
+  <p><strong>Symptômes :</strong> Troubles visuels et parfois perte soudaine de vision.</p>
+  <p><strong>Traitement :</strong> Examen vétérinaire spécialisé.</p>
+  <p><strong>Médicament :</strong> Selon la cause identifiée.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+
+<div class="maladie" data-categorie="chats">
+  <h3>261. Rhinite allergique féline</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Éternuements, écoulement nasal et irritation des voies respiratoires.</p>
+  <p><strong>Traitement :</strong> Réduction des facteurs irritants et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>262. Laryngite féline</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Modification de la voix, toux et gêne respiratoire.</p>
+  <p><strong>Traitement :</strong> Repos et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>263. Bronchite féline chronique</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Toux persistante et difficultés respiratoires.</p>
+  <p><strong>Traitement :</strong> Gestion de l'environnement et suivi vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>264. Pleurésie féline</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Respiration difficile, faiblesse et diminution de l'activité.</p>
+  <p><strong>Traitement :</strong> Diagnostic vétérinaire rapide et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>265. Uvéite féline</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Œil douloureux, rougeur, larmoiement et sensibilité à la lumière.</p>
+  <p><strong>Traitement :</strong> Examen ophtalmologique et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>266. Glaucome félin</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Douleur oculaire, rougeur et troubles de la vision.</p>
+  <p><strong>Traitement :</strong> Prise en charge vétérinaire spécialisée.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>267. Cataracte féline</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Opacification du cristallin et diminution de la vision.</p>
+  <p><strong>Traitement :</strong> Examen ophtalmologique et prise en charge adaptée.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>268. Blépharite féline</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Paupières rouges, gonflées et irritation autour des yeux.</p>
+  <p><strong>Traitement :</strong> Soins oculaires adaptés à la cause.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>269. Gingivostomatite chronique féline</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Douleur buccale, difficulté à manger, salivation et inflammation.</p>
+  <p><strong>Traitement :</strong> Soins dentaires et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="chats">
+  <h3>270. Syndrome de rétention urinaire féline</h3>
+  <p><strong>Animal :</strong> Chat</p>
+  <p><strong>Symptômes :</strong> Efforts pour uriner, douleur et diminution de la quantité d'urine.</p>
+  <p><strong>Traitement :</strong> Évaluation vétérinaire rapide.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+
+<div class="maladie" data-categorie="bovins">
+  <h3>271. Acidose métabolique du veau</h3>
+  <p><strong>Animal :</strong> Veau</p>
+  <p><strong>Symptômes :</strong> Faiblesse, déshydratation, abattement et respiration anormale.</p>
+  <p><strong>Traitement :</strong> Correction des déséquilibres et soins vétérinaires.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>272. Diarrhée à rotavirus du veau</h3>
+  <p><strong>Animal :</strong> Veau</p>
+  <p><strong>Symptômes :</strong> Diarrhée, déshydratation et faiblesse.</p>
+  <p><strong>Traitement :</strong> Réhydratation et soins de soutien.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>273. Diarrhée à coronavirus du veau</h3>
+  <p><strong>Animal :</strong> Veau</p>
+  <p><strong>Symptômes :</strong> Diarrhée, déshydratation et baisse d'appétit.</p>
+  <p><strong>Traitement :</strong> Réhydratation et soutien général.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>274. Dermatite interdigitée bovine</h3>
+  <p><strong>Animal :</strong> Bovin</p>
+  <p><strong>Symptômes :</strong> Inflammation entre les doigts et gêne locomotrice.</p>
+  <p><strong>Traitement :</strong> Soins des pieds et amélioration de l'hygiène.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>275. Fourbure bovine</h3>
+  <p><strong>Animal :</strong> Bovin</p>
+  <p><strong>Symptômes :</strong> Douleur des pieds, boiterie et difficulté à se déplacer.</p>
+  <p><strong>Traitement :</strong> Correction des facteurs alimentaires et soins des pieds.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>276. Réticulopéritonite traumatique bovine</h3>
+  <p><strong>Animal :</strong> Bovin</p>
+  <p><strong>Symptômes :</strong> Douleur abdominale, baisse d'appétit et diminution de la production.</p>
+  <p><strong>Traitement :</strong> Diagnostic vétérinaire et prise en charge adaptée.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>277. Alcalose ruminale bovine</h3>
+  <p><strong>Animal :</strong> Bovin</p>
+  <p><strong>Symptômes :</strong> Troubles digestifs, baisse d'appétit et diminution de la production.</p>
+  <p><strong>Traitement :</strong> Correction de la ration et suivi vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>278. Hypomagnésémie bovine</h3>
+  <p><strong>Animal :</strong> Bovin</p>
+  <p><strong>Symptômes :</strong> Nervosité, tremblements, faiblesse et troubles musculaires.</p>
+  <p><strong>Traitement :</strong> Correction du déficit minéral sous contrôle vétérinaire.</p>
+  <p><strong>Médicament :</strong> Complément minéral selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>279. Anémie ferriprive du veau</h3>
+  <p><strong>Animal :</strong> Veau</p>
+  <p><strong>Symptômes :</strong> Pâleur, faiblesse, retard de croissance et fatigue.</p>
+  <p><strong>Traitement :</strong> Recherche de la cause et correction de la carence.</p>
+  <p><strong>Médicament :</strong> Supplémentation selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="bovins">
+  <h3>280. Arthrite septique du veau</h3>
+  <p><strong>Animal :</strong> Veau</p>
+  <p><strong>Symptômes :</strong> Articulation gonflée, douleur, fièvre et difficulté à marcher.</p>
+  <p><strong>Traitement :</strong> Diagnostic rapide et traitement vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+
+<div class="maladie" data-categorie="volailles">
+  <h3>281. Hépatose graisseuse de la poule</h3>
+  <p><strong>Animal :</strong> Poule</p>
+  <p><strong>Symptômes :</strong> Baisse de ponte, faiblesse et troubles liés au métabolisme.</p>
+  <p><strong>Traitement :</strong> Correction de l'alimentation et gestion de l'élevage.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+  <h3>282. Rachitisme du poulet</h3>
+  <p><strong>Animal :</strong> Poulet</p>
+  <p><strong>Symptômes :</strong> Retard de croissance, faiblesse osseuse et difficultés locomotrices.</p>
+  <p><strong>Traitement :</strong> Correction de l'alimentation et des apports minéraux.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+  <h3>283. Encéphalomalacie nutritionnelle de la volaille</h3>
+  <p><strong>Animal :</strong> Volaille</p>
+  <p><strong>Symptômes :</strong> Troubles de l'équilibre, faiblesse et signes neurologiques.</p>
+  <p><strong>Traitement :</strong> Correction nutritionnelle et gestion de l'alimentation.</p>
+  <p><strong>Médicament :</strong> Supplémentation selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+  <h3>284. Pérosis de la volaille</h3>
+  <p><strong>Animal :</strong> Volaille</p>
+  <p><strong>Symptômes :</strong> Déformation des membres et difficultés à se déplacer.</p>
+  <p><strong>Traitement :</strong> Correction nutritionnelle et amélioration des conditions d'élevage.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+  <h3>285. Hypovitaminose A chez la volaille</h3>
+  <p><strong>Animal :</strong> Volaille</p>
+  <p><strong>Symptômes :</strong> Retard de croissance, baisse de production et troubles respiratoires possibles.</p>
+  <p><strong>Traitement :</strong> Correction de la ration et supplémentation adaptée.</p>
+  <p><strong>Médicament :</strong> Vitamine selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+  <h3>286. Hypovitaminose E-sélénium chez la volaille</h3>
+  <p><strong>Animal :</strong> Volaille</p>
+  <p><strong>Symptômes :</strong> Faiblesse, troubles musculaires et retard de croissance.</p>
+  <p><strong>Traitement :</strong> Correction nutritionnelle.</p>
+  <p><strong>Médicament :</strong> Supplémentation selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+  <h3>287. Botulisme aviaire</h3>
+  <p><strong>Animal :</strong> Volaille</p>
+  <p><strong>Symptômes :</strong> Faiblesse musculaire, paralysie et difficulté à se déplacer.</p>
+  <p><strong>Traitement :</strong> Retrait de la source contaminante et soins vétérinaires.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+  <h3>288. Aspergillose des poussins</h3>
+  <p><strong>Animal :</strong> Poussin</p>
+  <p><strong>Symptômes :</strong> Difficultés respiratoires, faiblesse et retard de croissance.</p>
+  <p><strong>Traitement :</strong> Amélioration de la ventilation et retrait des sources de contamination.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+  <h3>289. Omphalite du poussin</h3>
+  <p><strong>Animal :</strong> Poussin</p>
+  <p><strong>Symptômes :</strong> Ombilic inflammé, faiblesse et retard de croissance.</p>
+  <p><strong>Traitement :</strong> Hygiène de l'éclosion et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="volailles">
+  <h3>290. Salmonellose du caneton</h3>
+  <p><strong>Animal :</strong> Canard</p>
+  <p><strong>Symptômes :</strong> Diarrhée, faiblesse, perte d'appétit et mortalité.</p>
+  <p><strong>Traitement :</strong> Mesures sanitaires et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+
+<div class="maladie" data-categorie="lapins">
+  <h3>291. Dermatite à Cheyletiella du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Pellicules, démangeaisons et perte de poils.</p>
+  <p><strong>Traitement :</strong> Contrôle antiparasitaire et nettoyage de l'environnement.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="lapins">
+  <h3>292. Pododermatite ulcérative du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Plaies sous les pattes, douleur et difficulté à se déplacer.</p>
+  <p><strong>Traitement :</strong> Soins locaux et amélioration du logement.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="lapins">
+  <h3>293. Encéphalitozoonose oculaire du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Modification de l'œil, inflammation et troubles visuels possibles.</p>
+  <p><strong>Traitement :</strong> Examen vétérinaire et prise en charge adaptée.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="lapins">
+  <h3>294. Conjonctivite du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Yeux rouges, larmoiement et écoulement oculaire.</p>
+  <p><strong>Traitement :</strong> Examen de l'œil et traitement de la cause.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="lapins">
+  <h3>295. Rhinites chroniques du lapin</h3>
+  <p><strong>Animal :</strong> Lapin</p>
+  <p><strong>Symptômes :</strong> Éternuements, écoulement nasal et respiration bruyante.</p>
+  <p><strong>Traitement :</strong> Diagnostic de la cause et amélioration de l'environnement.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+
+<div class="maladie" data-categorie="equides">
+  <h3>296. Maladie de Lyme du cheval</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Signes variables, fatigue, raideur ou troubles locomoteurs.</p>
+  <p><strong>Traitement :</strong> Diagnostic vétérinaire et prise en charge adaptée.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="equides">
+  <h3>297. Fièvre de Potomac du cheval</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Fièvre, diarrhée, faiblesse et baisse d'appétit.</p>
+  <p><strong>Traitement :</strong> Prise en charge vétérinaire et soins de soutien.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic et prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="equides">
+  <h3>298. Colite à Clostridium du cheval</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Diarrhée, douleur abdominale, fièvre et abattement.</p>
+  <p><strong>Traitement :</strong> Soins vétérinaires et réhydratation selon l'état de l'animal.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="equides">
+  <h3>299. Ulcères gastriques équins</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Baisse d'appétit, inconfort abdominal et changement de comportement.</p>
+  <p><strong>Traitement :</strong> Gestion alimentaire et prise en charge vétérinaire.</p>
+  <p><strong>Médicament :</strong> Selon diagnostic vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div class="maladie" data-categorie="equides">
+  <h3>300. Myosite équine</h3>
+  <p><strong>Animal :</strong> Cheval</p>
+  <p><strong>Symptômes :</strong> Raideur musculaire, douleur et difficultés à se déplacer.</p>
+  <p><strong>Traitement :</strong> Repos, diagnostic vétérinaire et prise en charge adaptée.</p>
+  <p><strong>Médicament :</strong> Selon prescription vétérinaire.</p>
+  <p><strong>Mode d'administration :</strong> Selon prescription vétérinaire.</p>
+</div>
+
+<div id="messageVide" class="message-vide">
+    ❌ Aucune maladie trouvée.
+</div>
+
+</div>
+
+
+<footer>
+© 2026 VETOCARE — Pour la santé animale 🐾
+</footer>
+
+
+<script>
+
+let categorieActuelle = "toutes";
+
+function filtrer(categorie){
+
+    categorieActuelle = categorie;
+
+    appliquerFiltres();
+}
+
+
+function rechercherMaladie(){
+
+    appliquerFiltres();
+}
+
+
+function appliquerFiltres(){
+
+    const recherche =
+        document.getElementById("rechercheMaladie")
+        .value
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g,"");
+
+    const maladies =
+        document.querySelectorAll(".maladie");
+
+    let nombreVisible = 0;
+
+    maladies.forEach(function(maladie){
+
+        const texte =
+            maladie.textContent
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g,"");
+
+        const categorie =
+            maladie.getAttribute("data-categorie");
+
+        const correspondRecherche =
+            texte.includes(recherche);
+
+        const correspondCategorie =
+            categorieActuelle === "toutes" ||
+            categorie === categorieActuelle;
+
+        if(correspondRecherche && correspondCategorie){
+
+            maladie.style.display = "block";
+            nombreVisible++;
+
+        }else{
+
+            maladie.style.display = "none";
+
+        }
+
+    });
+
+
+    const message =
+        document.getElementById("messageVide");
+
+    if(nombreVisible === 0){
+        message.style.display = "block";
+    }else{
+        message.style.display = "none";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
