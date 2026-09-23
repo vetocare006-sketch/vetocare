@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vetocare - Santé et bien-être des animaux</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f9f6;
+      color: #183b2b;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0b8f55;
+      color: white;
+      padding: 18px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 16px;
+    }
+
+    nav {
+      background: white;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #087847;
+      font-weight: bold;
+      padding: 8px 13px;
+      border-radius: 20px;
+    }
+
+    nav a:hover {
+      background: #dff5e9;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 45px 20px;
+      background: linear-gradient(135deg, #dff8e9, #ffffff);
+    }
+
+    .hero h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+      color: #087847;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      background: #0b8f55;
+      color: white;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #066b40;
+    }
+
+    section {
+      padding: 35px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #087847;
+      font-size: 27px;
+    }
+
+    .search {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .search input {
+      flex: 1;
+      padding: 13px;
+      border: 1px solid #bbb;
+      border-radius: 25px;
+      font-size: 16px;
+    }
+
+    .search button {
+      border: none;
+      background: #0b8f55;
+      color: white;
+      padding: 0 20px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .emoji {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: #087847;
+      margin-bottom: 8px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 12px;
+      text-decoration: none;
+      color: white;
+      background: #0b8f55;
+      padding: 9px 16px;
+      border-radius: 20px;
+    }
+
+    .quiz {
+      background: #e5f7ed;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .quiz button {
+      margin: 8px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #0b8f55;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #resultat {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    footer {
+      background: #063d29;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 30px;
+    }
+
+    .warning {
+      background: #fff3cd;
+      border-left: 5px solid #e0a800;
+      padding: 15px;
+      margin-top: 25px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🐾 Vetocare</h1>
+    <p>La santé et le bien-être de vos animaux</p>
+  </header>
+
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#animaux">🐶 Animaux</a>
+    <a href="#conseils">💡 Conseils</a>
+    <a href="#maladies">🩺 Maladies</a>
+    <a href="#quiz">🎯 Quiz</a>
+  </nav>
+
+  <main>
+
+    <!-- ACCUEIL -->
+    <div class="hero" id="accueil">
+      <h2>Bienvenue sur Vetocare 🐾</h2>
+
+      <p>
+        Découvrez des informations utiles pour mieux comprendre,
+        protéger et prendre soin de vos animaux.
+      </p>
+
+      <a class="button" href="#animaux">
+        Découvrir les animaux
+      </a>
+    </div>
+
+    <!-- RECHERCHE -->
+    <section>
+      <h2>🔎 Rechercher sur Vetocare</h2>
+
+      <div class="search">
+        <input
+          type="text"
+          id="recherche"
+          placeholder="Exemple : chien, chat, maladie..."
+          onkeyup="rechercher()"
+        >
+        <button onclick="rechercher()">Rechercher</button>
+      </div>
+
+      <p id="messageRecherche" style="text-align:center;"></p>
+    </section>
+
+    <!-- ANIMAUX -->
+    <section id="animaux">
+      <h2>🐾 Nos animaux</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="emoji">🐶</div>
+          <h3>Chien</h3>
+          <p>Découvrez les soins, l'alimentation et les besoins du chien.</p>
+          <a href="animaux.html">Voir plus</a>
+        </div>
+
+        <div class="card">
+          <div class="emoji">🐱</div>
+          <h3>Chat</h3>
+          <p>Apprenez à mieux prendre soin de votre chat.</p>
+          <a href="animaux.html">Voir plus</a>
+        </div>
+
+        <div class="card">
+          <div class="emoji">🐄</div>
+          <h3>Vache</h3>
+          <p>Informations utiles sur la santé et l'élevage des bovins.</p>
+          <a href="animaux.html">Voir plus</a>
+        </div>
+
+        <div class="card">
+          <div class="emoji">🐐</div>
+          <h3>Chèvre</h3>
+          <p>Conseils pour l'alimentation et le bien-être des chèvres.</p>
+          <a href="animaux.html">Voir plus</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONSEILS -->
+    <section id="conseils">
+      <h2>💡 Conseils vétérinaires</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="emoji">🥩</div>
+          <h3>Alimentation</h3>
+          <p>
+            Une bonne alimentation contribue à la santé et au développement
+            de l'animal.
+          </p>
+          <a href="conseils.html">Conseils</a>
+        </div>
+
+        <div class="card">
+          <div class="emoji">💧</div>
+          <h3>Hydratation</h3>
+          <p>
+            Assurez toujours à votre animal un accès à une eau propre.
+          </p>
+          <a href="conseils.html">Conseils</a>
+        </div>
+
+        <div class="card">
+          <div class="emoji">🧼</div>
+          <h3>Hygiène</h3>
+          <p>
+            L'hygiène et la propreté participent à la prévention de nombreux
+            problèmes.
+          </p>
+          <a href="conseils.html">Conseils</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MALADIES -->
+    <section id="maladies">
+      <h2>🩺 Maladies animales</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="emoji">🌡️</div>
+          <h3>Symptômes</h3>
+          <p>
+            Apprenez à reconnaître certains signes inhabituels chez un animal.
+          </p>
+          <a href="maladies.html">En savoir plus</a>
+        </div>
+
+        <div class="card">
+          <div class="emoji">🦠</div>
+          <h3>Maladies</h3>
+          <p>
+            Retrouvez des informations générales sur différentes maladies.
+          </p>
+          <a href="maladies.html">Consulter</a>
+        </div>
+
+        <div class="card">
+          <div class="emoji">👨‍⚕️</div>
+          <h3>Vétérinaire</h3>
+          <p>
+            En cas de problème sérieux, consultez un professionnel.
+          </p>
+          <a href="maladies.html">Informations</a>
+        </div>
+
+      </div>
+
+      <div class="warning">
+        ⚠️ <strong>Important :</strong>
+        Vetocare fournit des informations générales et ne remplace pas
+        l'avis d'un vétérinaire.
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz">
+      <h2>🎯 Quiz Vetocare</h2>
+
+      <div class="quiz">
+
+        <h3>
+          Quel élément est indispensable à un animal chaque jour ?
+        </h3>
+
+        <button onclick="reponse(false)">🍬 Des bonbons</button>
+
+        <button onclick="reponse(true)">💧 De l'eau propre</button>
+
+        <button onclick="reponse(false)">🍫 Du chocolat</button>
+
+        <div id="resultat"></div>
+
+        <p style="margin-top:15px;">
+          Tu peux retrouver le quiz complet ici :
+        </p>
+
+        <a class="button" href="quiz.html">
+          Ouvrir le quiz complet
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <h3>🐾 Vetocare</h3>
+    <p>Prendre soin des animaux, c'est protéger la vie.</p>
+    <p>© 2026 Vetocare</p>
+  </footer>
+
+  <script>
+
+    function reponse(correct) {
+
+      const resultat = document.getElementById("resultat");
+
+      if (correct) {
+        resultat.innerHTML = "✅ Bonne réponse !";
+      } else {
+        resultat.innerHTML = "❌ Essaie encore !";
+      }
+
+    }
+
+    function rechercher() {
+
+      const texte = document
+        .getElementById("recherche")
+        .value
+        .toLowerCase();
+
+      const message = document.getElementById("messageRecherche");
+
+      if (texte === "") {
+        message.innerHTML = "";
+        return;
+      }
+
+      if (
+        texte.includes("chien") ||
+        texte.includes("chat") ||
+        texte.includes("vache") ||
+        texte.includes("chèvre") ||
+        texte.includes("chevre")
+      ) {
+
+        message.innerHTML =
+          "🐾 Nous avons des informations sur les animaux. Consulte la section « Animaux ».";
+
+      } else if (
+        texte.includes("maladie") ||
+        texte.includes("symptôme") ||
+        texte.includes("symptome")
+      ) {
+
+        message.innerHTML =
+          "🩺 Consulte la section « Maladies » pour plus d'informations.";
+
+      } else if (
+        texte.includes("conseil") ||
+        texte.includes("alimentation") ||
+        texte.includes("eau") ||
+        texte.includes("hygiène") ||
+        texte.includes("hygiene")
+      ) {
+
+        message.innerHTML =
+          "💡 Consulte la section « Conseils ».";
+
+      } else {
+
+        message.innerHTML =
+          "🔎 Aucun résultat trouvé pour le moment.";
+
+      }
+    }
+
+  </script>
+
+</body>
+</html>
