@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VetoCare Premium</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f8f5;
+  color:#1f2937;
+}
+
+header{
+  background:#176b45;
+  color:white;
+  text-align:center;
+  padding:22px 15px;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+}
+
+.container{
+  max-width:700px;
+  margin:30px auto;
+  padding:0 15px;
+}
+
+.card{
+  background:white;
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 8px 25px rgba(0,0,0,.1);
+  text-align:center;
+}
+
+.badge{
+  display:inline-block;
+  background:#176b45;
+  color:white;
+  padding:8px 16px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+h1{
+  color:#176b45;
+  font-size:32px;
+}
+
+.price{
+  font-size:36px;
+  font-weight:bold;
+  color:#176b45;
+  margin:15px 0;
+}
+
+.price span{
+  font-size:15px;
+  color:#6b7280;
+  font-weight:normal;
+}
+
+ul{
+  list-style:none;
+  padding:0;
+  text-align:left;
+  line-height:2;
+}
+
+.payment{
+  margin-top:25px;
+  text-align:left;
+}
+
+.payment h2{
+  color:#176b45;
+}
+
+.method{
+  display:block;
+  width:100%;
+  padding:15px;
+  margin:10px 0;
+  border:2px solid #d1d5db;
+  border-radius:14px;
+  background:white;
+  font-size:16px;
+  font-weight:bold;
+}
+
+.notice{
+  background:#fff7ed;
+  padding:15px;
+  border-radius:12px;
+  font-size:14px;
+  line-height:1.5;
+  margin-top:20px;
+}
+
+.back{
+  display:inline-block;
+  margin-top:20px;
+  color:#176b45;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+footer{
+  text-align:center;
+  margin-top:30px;
+  padding:20px;
+  background:#176b45;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🐾 VETOCARE</div>
+  <div>La santé animale au cœur de nos connaissances</div>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<div class="badge">
+⭐ PREMIUM
+</div>
+
+<h1>VetoCare Premium</h1>
+
+<p>
+Accédez aux fonctionnalités Premium de VetoCare.
+</p>
+
+<div class="price">
+5 000 FC <span>/ mois</span>
+</div>
+
+<ul>
+<li>✅ Contenu Premium</li>
+<li>✅ Fonctionnalités avancées</li>
+<li>✅ Accès aux contenus exclusifs</li>
+<li>🐾 Améliorations futures</li>
+</ul>
+
+<div class="payment">
+
+<h2>📱 Choisissez votre moyen de paiement</h2>
+
+<button class="method" onclick="choisirPaiement('M-Pesa')">
+🟢 M-Pesa
+</button>
+
+<button class="method" onclick="choisirPaiement('Airtel Money')">
+🔴 Airtel Money
+</button>
+
+<button class="method" onclick="choisirPaiement('Orange Money')">
+🟠 Orange Money
+</button>
+
+</div>
+
+<div class="notice">
+
+🔒 <strong>Paiement sécurisé</strong><br>
+
+Le paiement Mobile Money sera connecté dans la prochaine étape.
+VetoCare devra vérifier automatiquement le paiement avant
+d'activer l'abonnement Premium.
+
+</div>
+
+<a class="back" href="index.html">
+← Retour à l'accueil
+</a>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 VETOCARE — Pour la santé animale 🐾
+</footer>
+
+<script>
+
+function choisirPaiement(moyen){
+
+alert(
+"Moyen de paiement choisi : " +
+moyen +
+"\n\nLe paiement Mobile Money sera connecté dans la prochaine étape."
+);
+
+}
+
+</script>
+
+</body>
+</html>
